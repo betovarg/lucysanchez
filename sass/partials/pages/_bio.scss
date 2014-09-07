@@ -1,0 +1,11 @@
+.bio .limiter {
+	padding: 20px;
+	margin: 0 auto;
+	@include breakpoint($desktop) {
+		width: 60%;
+		padding: 0;	
+	}
+}
+.bio p {
+	font-size: 15px;
+}

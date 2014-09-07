@@ -1,3 +1,8 @@
+//Falta:
+// despausar el slider al volver arriba
+// recalcular imagen cuando se carga por primera vez, no se ve bien cuando carga en monitores pequeños
+// js para carga condicional de imagenes
+
 // Scroll Anclas
 $(function() {
   $('a[href*=#]:not([href=#])').click(function() {
@@ -14,19 +19,29 @@ $(function() {
   });
 })
 
-//executes flexslider
-$(window).load(function() {
+$(document).ready(function() {
+	
+	//executes flexslider
   $('.flexslider').flexslider({
-    animation: "slide"
+    animation: "slide",
+    animationSpeed: 1500,
+    useCSS: true, 
+    touch: true,
+    pauseOnAction: true,
+    controlNav: false,
   });
 
   //cover style images in slides
   $('.slide-image').resizeToParent();
 
+	//lazy loading thumbnails
+	$(".gallery img").unveil(2, function() {
+  $(this).load(function() {
+    this.style.opacity = 1;
+  });
 });
 
-//hero container to window height
-$(document).ready(function() {
+	//hero container to window height
   function setHeight() {
     windowHeight = $(window).innerHeight();
     $('.hero-container').css('height', windowHeight);
@@ -36,7 +51,9 @@ $(document).ready(function() {
   $(window).resize(function() {
     setHeight();
   });
+
 });
+
 
 // back to top
 $(document).scroll(function () {
@@ -47,4 +64,13 @@ $(document).scroll(function () {
     } else {
         $('.back-to-top').removeClass("visible");
     }
+    if (y > 500) {
+			$('.flexslider').flexslider("pause");
+    //else {
+    //  $('.flexslider').flexslider("play");
+    }
+    if (y < 499) {
+			$('.flexslider').flexslider("play");
+		}
 });
+

@@ -31,7 +31,7 @@
 *********************************/
 // slides area
 .under-slides {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 38%;
   width: 100%;
@@ -40,6 +40,10 @@
 
 .hero-container {
   overflow: hidden;
+  background: #333;
+  @include breakpoint($desktop) {
+	  min-height: 500px;
+  }
 }
 
 .flexslider  {
@@ -105,6 +109,9 @@ html[xmlns] .slides  {
 			&.empty {
 				background: transparent;
 			}
+			h3 {
+				color: #fff;
+			}
 		}
 	 .slides  {
      zoom:  1;
@@ -139,9 +146,9 @@ html[xmlns] .slides  {
      display:  block;
      width:  40px;
      height:  40px;
-     margin:  -20px 0 0;
+     margin:  0;
      position:  absolute;
-     top:  50%;
+     top: 0;
      z-index:  10;
      overflow:  hidden;
      opacity:  0;
@@ -155,43 +162,34 @@ html[xmlns] .slides  {
 
 .flex-direction-nav .flex-prev  {
      left:  -50px;
+     display: none;
  }
 
 .flex-direction-nav .flex-next  {
-     right:  -50px;
+     right:  0;
      text-align:  right;
- }
+     opacity: 1;
+     height: 100%;
+     width: 30px;
+     background: rgba(0,204,255,0.5);
+     text-indent: 100%;
+     overflow: hidden;
+     color: #fff;
+     -webkit-transition:  all 1s ease;
+     -moz-transition:  all 1s ease;
+     -o-transition:  all 1s ease;
+     transition:  all 1s ease;
 
-.flexslider:hover .flex-prev  {
-     opacity:  0.7;
-     left:  10px;
- }
-
-.flexslider:hover .flex-next  {
-     opacity:  0.7;
-     right:  10px;
- }
-
-.flexslider:hover .flex-next:hover,  .flexslider:hover .flex-prev:hover  {
-     opacity:  1;
+     &:hover {
+	     background: rgba(0,204,255,0.9);
+	     width: 50px;
+     }
  }
 
 .flex-direction-nav .flex-disabled  {
      opacity:  0!important;
      filter: alpha(opacity=0);
      cursor:  default;
- }
-
-.flex-direction-nav a:before   {
-     font-family:  "flexslider-icon";
-     font-size:  40px;
-     line-height: 1;
-     display:  inline-block;
-     content:  '\f001';
- }
-
-.flex-direction-nav a.flex-next:before   {
-     content:  '\f002';
  }
 
 .slides-go-down {
@@ -202,26 +200,12 @@ html[xmlns] .slides  {
   z-index: 10;
   top: 50%;
   left: 0;
-  margin-top: -50px;
+  margin-top: -20px;
   a {
     display: inline-block;
-    height: 50px;
-    width: 50px;
-    background: red;
+    height: 80px;
+    width: 	80px;
+    background: #00CCFF;
     @include border-radius(50px);
   }
-}
-
-@media screen and (max-width: 860px)  {
-    
-  .flex-direction-nav .flex-prev  {
-     opacity:  1;
-     left:  10px;
-	}
-
-  .flex-direction-nav .flex-next  {
-     opacity:  1;
-     right:  10px;
-	}
-
 }

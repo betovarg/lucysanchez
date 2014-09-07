@@ -31,7 +31,9 @@ $breakpoint-no-query-fallbacks: false;
 @import "partials/mixins";
 @import "partials/base";
 @import "partials/layout";
+@import "partials/placeholders";
 @import "partials/components/*";
+@import "partials/pages/*";
 
 // Include only stylesheets with media queries
 //@import "partials/components/banner";
