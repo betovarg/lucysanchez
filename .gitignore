@@ -1,0 +1,6 @@
+# Created by http://www.gitignore.io
+
+### Sass ###
+.sass-cache
+.DS_store
+*/.DS_store
