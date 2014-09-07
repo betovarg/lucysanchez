@@ -1,0 +1,27 @@
+// z-index
+.header {
+  z-index: 10;
+}
+.hero-container {
+  z-index: 5;
+}
+.flexslider {
+  z-index: 5;
+}
+.under-slides {
+  z-index: 1;
+}
+
+// #header
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+// titles
+.title {
+  text-align: center;
+  margin: 20px 0;
+  color: #fff;
+}

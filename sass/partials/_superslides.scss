@@ -1,0 +1,88 @@
+.slides {
+  position: relative;
+  background: #333;
+  .scrollable {
+    *zoom: 1;
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    height: 100%;
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+}
+
+.slides-container {
+  display: block !important;
+  // removes fade
+}
+.slides-control {
+  z-index: 5;
+  // forces same z-index of the container
+}
+.slides-navigation {
+  margin: 0 auto;
+  position: absolute;
+  z-index: 5;
+  bottom: 0;
+  width: 100%;
+  a {
+    position: absolute;
+    display: block;
+    bottom: 0;
+  }
+  a.prev {
+    left: 0;
+  }
+  a.next {
+    right: 0;
+  }
+}
+.slides-pagination {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  a {
+    border: 2px solid #222;
+    border-radius: 15px;
+    width: 10px;
+    height: 10px;
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    zoom: 1;
+    *display: inline;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=");
+    margin: 2px;
+    overflow: hidden;
+    text-indent: -100%;
+    &.current {
+      background: #222;
+    }
+  }
+}
+
+.slides-go-down {
+  width: 100%;
+  text-align: center;
+  height: 50px;
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 0;
+  margin-top: -50px;
+  a {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    background: red;
+    @include border-radius(50px);
+  }
+}

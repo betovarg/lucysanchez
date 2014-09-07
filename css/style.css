@@ -1,0 +1,639 @@
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,400italic,600italic);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab);
+/* line 5, ../sass/partials/_base.scss */
+html {
+  font-size: 62.5%;
+  line-height: 1.4em;
+}
+
+/* line 12, ../sass/partials/_base.scss */
+body {
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  font-family: "freight-sans-pro", Helvetica, sans-serif;
+  background: #1b1a2d;
+}
+
+/* line 20, ../sass/partials/_base.scss */
+.page {
+  font-size: 14px;
+  font-size: 1.4rem;
+  overflow: hidden;
+}
+
+/* line 25, ../sass/partials/_base.scss */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* line 30, ../sass/partials/_base.scss */
+p, li, dd {
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.4em;
+}
+
+/* line 35, ../sass/partials/_base.scss */
+p {
+  margin: 0 0 0.7em 0;
+  font-size: 20px;
+  font-size: 2rem;
+}
+
+/* line 40, ../sass/partials/_base.scss */
+a, a.active {
+  text-decoration: none;
+  color: #344253;
+}
+
+/* line 45, ../sass/partials/_base.scss */
+a:hover {
+  text-decoration: none;
+}
+
+/* line 49, ../sass/partials/_base.scss */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 1em 0;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1.2em;
+  font-family: "omnes-pro", Arial, sans-serif;
+  color: #344253;
+}
+
+/* line 58, ../sass/partials/_base.scss */
+h1 {
+  font-size: 24px;
+  font-size: 2.4rem;
+}
+
+/* line 62, ../sass/partials/_base.scss */
+h3 {
+  font-size: 20px;
+  font-size: 2rem;
+}
+
+/* line 66, ../sass/partials/_base.scss */
+h4 {
+  font-size: 18px;
+  font-size: 1.8rem;
+}
+
+/* line 70, ../sass/partials/_base.scss */
+h5 {
+  font-size: 16px;
+  font-size: 1.6rem;
+}
+
+/* line 74, ../sass/partials/_base.scss */
+h6 {
+  font-size: 14px;
+  font-size: 1.4rem;
+}
+
+/* line 78, ../sass/partials/_base.scss */
+ul {
+  margin: 0 0 0.5em 0;
+  padding: 0 0 0 3em;
+}
+
+/* line 83, ../sass/partials/_base.scss */
+table {
+  margin: 0;
+  background-color: transparent;
+  width: 100%;
+  font-size: 15px;
+  font-size: 1.5rem;
+}
+/* line 88, ../sass/partials/_base.scss */
+table caption {
+  font-weight: 600;
+  padding: 0.5em;
+  margin: 0.5em auto;
+}
+/* line 93, ../sass/partials/_base.scss */
+table td, table th {
+  padding: 0.5em;
+}
+/* line 96, ../sass/partials/_base.scss */
+table thead th, table tfoot th {
+  font-weight: 600;
+}
+/* line 99, ../sass/partials/_base.scss */
+table tfoot th {
+  border-top: 0.1em inset #000;
+}
+/* line 102, ../sass/partials/_base.scss */
+table thead th {
+  border-bottom: 0.1em inset #000;
+}
+
+/* line 107, ../sass/partials/_base.scss */
+tr.even, tr.odd {
+  background-color: transparent;
+}
+
+/* line 9, ../sass/partials/_layout.scss */
+.grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* line 14, ../sass/partials/_layout.scss */
+.content-container {
+  position: relative;
+  z-index: 11;
+  background: #1b1a2d;
+}
+
+/* line 1, ../sass/partials/_placeholders.scss */
+.gallery li {
+  list-style-type: none;
+}
+
+/*
+ * jQuery FlexSlider v2.2.0
+ * http://www.woothemes.com/flexslider/
+ *
+ * Copyright 2012 WooThemes
+ * Free to use under the GPLv2 license.
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Contributing author: Tyler Smith (@mbmufffin)
+ */
+/* Browser Resets
+*********************************/
+/* line 15, ../sass/partials/components/_flexslider.scss */
+.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus {
+  outline: none;
+}
+
+/* line 22, ../sass/partials/components/_flexslider.scss */
+.slides,
+.flex-control-nav,
+.flex-direction-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* FlexSlider Necessary Styles
+*********************************/
+/* line 33, ../sass/partials/components/_flexslider.scss */
+.under-slides {
+  position: absolute;
+  left: 0;
+  top: 38%;
+  width: 100%;
+  text-align: center;
+}
+
+/* line 41, ../sass/partials/components/_flexslider.scss */
+.hero-container {
+  overflow: hidden;
+}
+
+/* line 45, ../sass/partials/components/_flexslider.scss */
+.flexslider {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* line 51, ../sass/partials/components/_flexslider.scss */
+.flexslider .slides > li {
+  display: none;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+}
+
+/* Hide the slides before the JS is loaded. Avoids image jumping */
+/* line 57, ../sass/partials/components/_flexslider.scss */
+.flexslider .slides img {
+  /*width:  100%;
+  */
+  display: block;
+  max-width: none;
+}
+
+/*removed width 100%,  plugin will take care of size*/
+/* line 63, ../sass/partials/components/_flexslider.scss */
+.flex-pauseplay span {
+  text-transform: capitalize;
+}
+
+/* Clearfix for the .slides element */
+/* line 69, ../sass/partials/components/_flexslider.scss */
+.slides:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+/* line 78, ../sass/partials/components/_flexslider.scss */
+html[xmlns] .slides {
+  display: block;
+}
+
+/* line 82, ../sass/partials/components/_flexslider.scss */
+* html .slides {
+  height: 1%;
+}
+
+/* No JavaScript Fallback */
+/* If you are not using another script,  such as Modernizr,  make sure you
+ * include js that eliminates this class on page load */
+/* line 90, ../sass/partials/components/_flexslider.scss */
+.no-js .slides > li:first-child {
+  display: block;
+}
+
+/* FlexSlider Lucy Sánchez Theme
+*********************************/
+/* line 97, ../sass/partials/components/_flexslider.scss */
+.flexslider {
+  margin: 0 0 60px;
+  position: fixed;
+  width: 100%;
+  zoom: 1;
+}
+/* line 102, ../sass/partials/components/_flexslider.scss */
+.flexslider li {
+  height: 100%;
+  background: #333;
+}
+/* line 105, ../sass/partials/components/_flexslider.scss */
+.flexslider li.empty {
+  background: transparent;
+}
+/* line 109, ../sass/partials/components/_flexslider.scss */
+.flexslider .slides {
+  zoom: 1;
+  height: 100%;
+}
+
+/* line 114, ../sass/partials/components/_flexslider.scss */
+.empty-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* line 119, ../sass/partials/components/_flexslider.scss */
+.flex-viewport {
+  max-height: 2000px;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  height: 100%;
+}
+
+/* line 128, ../sass/partials/components/_flexslider.scss */
+.loading .flex-viewport {
+  max-height: 300px;
+}
+
+/* Direction Nav */
+/* line 133, ../sass/partials/components/_flexslider.scss */
+.flex-direction-nav {
+  *height: 0;
+}
+
+/* line 137, ../sass/partials/components/_flexslider.scss */
+.flex-direction-nav a {
+  text-decoration: none;
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0;
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  overflow: hidden;
+  opacity: 0;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.8);
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+/* line 156, ../sass/partials/components/_flexslider.scss */
+.flex-direction-nav .flex-prev {
+  left: -50px;
+}
+
+/* line 160, ../sass/partials/components/_flexslider.scss */
+.flex-direction-nav .flex-next {
+  right: -50px;
+  text-align: right;
+}
+
+/* line 165, ../sass/partials/components/_flexslider.scss */
+.flexslider:hover .flex-prev {
+  opacity: 0.7;
+  left: 10px;
+}
+
+/* line 170, ../sass/partials/components/_flexslider.scss */
+.flexslider:hover .flex-next {
+  opacity: 0.7;
+  right: 10px;
+}
+
+/* line 175, ../sass/partials/components/_flexslider.scss */
+.flexslider:hover .flex-next:hover, .flexslider:hover .flex-prev:hover {
+  opacity: 1;
+}
+
+/* line 179, ../sass/partials/components/_flexslider.scss */
+.flex-direction-nav .flex-disabled {
+  opacity: 0 !important;
+  filter: alpha(opacity=0);
+  cursor: default;
+}
+
+/* line 185, ../sass/partials/components/_flexslider.scss */
+.flex-direction-nav a:before {
+  font-family: "flexslider-icon";
+  font-size: 40px;
+  line-height: 1;
+  display: inline-block;
+  content: '\f001';
+}
+
+/* line 193, ../sass/partials/components/_flexslider.scss */
+.flex-direction-nav a.flex-next:before {
+  content: '\f002';
+}
+
+/* line 197, ../sass/partials/components/_flexslider.scss */
+.slides-go-down {
+  width: 100%;
+  text-align: center;
+  height: 50px;
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 0;
+  margin-top: -50px;
+}
+/* line 206, ../sass/partials/components/_flexslider.scss */
+.slides-go-down a {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  background: red;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+}
+
+@media screen and (max-width: 860px) {
+  /* line 217, ../sass/partials/components/_flexslider.scss */
+  .flex-direction-nav .flex-prev {
+    opacity: 1;
+    left: 10px;
+  }
+
+  /* line 222, ../sass/partials/components/_flexslider.scss */
+  .flex-direction-nav .flex-next {
+    opacity: 1;
+    right: 10px;
+  }
+}
+/* line 5, ../sass/partials/components/_gallery.scss */
+.gallery ul {
+  overflow: hidden;
+  padding: 0;
+}
+/* line 9, ../sass/partials/components/_gallery.scss */
+.gallery li {
+  margin-bottom: 20px;
+}
+@media (min-width: 401px) and (max-width: 767px) {
+  /* line 9, ../sass/partials/components/_gallery.scss */
+  .gallery li {
+    width: 48.93617%;
+    clear: right;
+    float: left;
+    margin-left: 0;
+    margin-right: 2.12766%;
+  }
+  /* line 14, ../sass/partials/components/_gallery.scss */
+  .gallery li:nth-child(2n+0) {
+    margin-right: 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 959px) {
+  /* line 9, ../sass/partials/components/_gallery.scss */
+  .gallery li {
+    width: 31.91489%;
+    clear: right;
+    float: left;
+    margin-left: 0;
+    margin-right: 2.12766%;
+  }
+  /* line 21, ../sass/partials/components/_gallery.scss */
+  .gallery li:nth-child(3n+0) {
+    margin-right: 0;
+  }
+}
+@media (min-width: 960px) {
+  /* line 9, ../sass/partials/components/_gallery.scss */
+  .gallery li {
+    width: 23.40426%;
+    clear: right;
+    float: left;
+    margin-left: 0;
+    margin-right: 2.12766%;
+  }
+  /* line 28, ../sass/partials/components/_gallery.scss */
+  .gallery li:nth-child(4n+0) {
+    margin-right: 0;
+  }
+}
+
+/* line 2, ../sass/partials/components/_global.scss */
+.header {
+  z-index: 10;
+}
+
+/* line 5, ../sass/partials/components/_global.scss */
+.hero-container {
+  z-index: 5;
+}
+
+/* line 8, ../sass/partials/components/_global.scss */
+.flexslider {
+  z-index: 5;
+}
+
+/* line 11, ../sass/partials/components/_global.scss */
+.under-slides {
+  z-index: 1;
+}
+
+/* line 16, ../sass/partials/components/_global.scss */
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+/* line 23, ../sass/partials/components/_global.scss */
+.title {
+  text-align: center;
+  margin: 20px 0;
+  color: #fff;
+}
+
+/* line 2, ../sass/partials/components/_navigation.scss */
+.main-nav ul {
+  padding: 15px 0px;
+}
+/* line 5, ../sass/partials/components/_navigation.scss */
+.main-nav li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 10px;
+}
+/* line 9, ../sass/partials/components/_navigation.scss */
+.main-nav li a {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+/* line 16, ../sass/partials/components/_navigation.scss */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: red;
+  width: 50px;
+  height: 50px;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+/* line 31, ../sass/partials/components/_navigation.scss */
+.back-to-top.visible {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* SLIMBOX */
+/* line 3, ../sass/partials/components/_slimbox2.scss */
+#lbOverlay {
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  cursor: pointer;
+}
+
+/* line 14, ../sass/partials/components/_slimbox2.scss */
+#lbCenter, #lbBottomContainer {
+  position: absolute;
+  z-index: 9999;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+/* line 21, ../sass/partials/components/_slimbox2.scss */
+.lbLoading {
+  background: white url(loading.gif) no-repeat center;
+}
+
+/* line 25, ../sass/partials/components/_slimbox2.scss */
+#lbImage {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: 10px solid #fff;
+  background-repeat: no-repeat;
+}
+
+/* line 33, ../sass/partials/components/_slimbox2.scss */
+#lbPrevLink, #lbNextLink {
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 50%;
+  outline: none;
+}
+
+/* line 41, ../sass/partials/components/_slimbox2.scss */
+#lbPrevLink {
+  left: 0;
+}
+
+/* line 45, ../sass/partials/components/_slimbox2.scss */
+#lbPrevLink:hover {
+  background: transparent url(prevlabel.gif) no-repeat 0 15%;
+}
+
+/* line 49, ../sass/partials/components/_slimbox2.scss */
+#lbNextLink {
+  right: 0;
+}
+
+/* line 53, ../sass/partials/components/_slimbox2.scss */
+#lbNextLink:hover {
+  background: transparent url(nextlabel.gif) no-repeat 100% 15%;
+}
+
+/* line 57, ../sass/partials/components/_slimbox2.scss */
+#lbBottom {
+  font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+  font-size: 10px;
+  color: #666;
+  line-height: 1.4em;
+  text-align: left;
+  border: 10px solid #fff;
+  border-top-style: none;
+}
+
+/* line 67, ../sass/partials/components/_slimbox2.scss */
+#lbCloseLink {
+  display: block;
+  float: right;
+  width: 66px;
+  height: 22px;
+  background: transparent url(closelabel.gif) no-repeat center;
+  margin: 5px 0;
+  outline: none;
+}
+
+/* line 77, ../sass/partials/components/_slimbox2.scss */
+#lbCaption, #lbNumber {
+  margin-right: 71px;
+}
+
+/* line 81, ../sass/partials/components/_slimbox2.scss */
+#lbCaption {
+  font-weight: bold;
+}
