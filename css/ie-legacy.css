@@ -262,16 +262,17 @@ tr.even, tr.odd {
   */
   display: block;
   max-width: none;
+  position: relative;
 }
 
 /*removed width 100%,  plugin will take care of size*/
-/* line 106, ../sass/partials/components/_flexslider.scss */
+/* line 107, ../sass/partials/components/_flexslider.scss */
 .flex-pauseplay span {
   text-transform: capitalize;
 }
 
 /* Clearfix for the .slides element */
-/* line 112, ../sass/partials/components/_flexslider.scss */
+/* line 113, ../sass/partials/components/_flexslider.scss */
 .slides:after {
   content: ".";
   display: block;
@@ -281,12 +282,12 @@ tr.even, tr.odd {
   height: 0;
 }
 
-/* line 121, ../sass/partials/components/_flexslider.scss */
+/* line 122, ../sass/partials/components/_flexslider.scss */
 html[xmlns] .slides {
   display: block;
 }
 
-/* line 125, ../sass/partials/components/_flexslider.scss */
+/* line 126, ../sass/partials/components/_flexslider.scss */
 * html .slides {
   height: 1%;
 }
@@ -294,47 +295,47 @@ html[xmlns] .slides {
 /* No JavaScript Fallback */
 /* If you are not using another script,  such as Modernizr,  make sure you
  * include js that eliminates this class on page load */
-/* line 133, ../sass/partials/components/_flexslider.scss */
+/* line 134, ../sass/partials/components/_flexslider.scss */
 .no-js .slides > li:first-child {
   display: block;
 }
 
 /* FlexSlider Lucy Sánchez Theme
 *********************************/
-/* line 140, ../sass/partials/components/_flexslider.scss */
+/* line 141, ../sass/partials/components/_flexslider.scss */
 .flexslider {
   margin: 0 0 60px;
   position: fixed;
   width: 100%;
   zoom: 1;
 }
-/* line 145, ../sass/partials/components/_flexslider.scss */
+/* line 146, ../sass/partials/components/_flexslider.scss */
 .flexslider li {
   height: 100%;
   background: #333;
 }
-/* line 148, ../sass/partials/components/_flexslider.scss */
+/* line 149, ../sass/partials/components/_flexslider.scss */
 .flexslider li.empty {
   background: transparent;
 }
-/* line 151, ../sass/partials/components/_flexslider.scss */
+/* line 152, ../sass/partials/components/_flexslider.scss */
 .flexslider li h3 {
   color: #fff;
 }
-/* line 155, ../sass/partials/components/_flexslider.scss */
+/* line 156, ../sass/partials/components/_flexslider.scss */
 .flexslider .slides {
   zoom: 1;
   height: 100%;
 }
 
-/* line 160, ../sass/partials/components/_flexslider.scss */
+/* line 161, ../sass/partials/components/_flexslider.scss */
 .empty-container {
   width: 100%;
   height: 100%;
   position: relative;
 }
 
-/* line 165, ../sass/partials/components/_flexslider.scss */
+/* line 166, ../sass/partials/components/_flexslider.scss */
 .flex-viewport {
   max-height: 2000px;
   -webkit-transition: all 1s ease;
@@ -344,18 +345,18 @@ html[xmlns] .slides {
   height: 100%;
 }
 
-/* line 174, ../sass/partials/components/_flexslider.scss */
+/* line 175, ../sass/partials/components/_flexslider.scss */
 .loading .flex-viewport {
   max-height: 300px;
 }
 
 /* Direction Nav */
-/* line 179, ../sass/partials/components/_flexslider.scss */
+/* line 180, ../sass/partials/components/_flexslider.scss */
 .flex-direction-nav {
   *height: 0;
 }
 
-/* line 183, ../sass/partials/components/_flexslider.scss */
+/* line 184, ../sass/partials/components/_flexslider.scss */
 .flex-direction-nav a {
   text-decoration: none;
   display: block;
@@ -375,13 +376,13 @@ html[xmlns] .slides {
   transition: all .3s ease;
 }
 
-/* line 202, ../sass/partials/components/_flexslider.scss */
+/* line 203, ../sass/partials/components/_flexslider.scss */
 .flex-direction-nav .flex-prev {
   left: -50px;
   display: none;
 }
 
-/* line 207, ../sass/partials/components/_flexslider.scss */
+/* line 208, ../sass/partials/components/_flexslider.scss */
 .flex-direction-nav .flex-next {
   right: 0;
   text-align: right;
@@ -400,18 +401,18 @@ html[xmlns] .slides {
   width: 50px;
   top: 43%;
 }
-/* line 232, ../sass/partials/components/_flexslider.scss */
+/* line 233, ../sass/partials/components/_flexslider.scss */
 .flex-direction-nav .flex-next:hover {
   background-color: rgba(0, 204, 255, 0.9);
   width: 50px;
 }
-/* line 242, ../sass/partials/components/_flexslider.scss */
+/* line 243, ../sass/partials/components/_flexslider.scss */
 .flex-direction-nav .flex-next.hide {
   visibility: 0;
   opacity: 0;
 }
 
-/* line 248, ../sass/partials/components/_flexslider.scss */
+/* line 249, ../sass/partials/components/_flexslider.scss */
 .flex-direction-nav .flex-disabled {
   opacity: 0 !important;
   filter: alpha(opacity=0);
