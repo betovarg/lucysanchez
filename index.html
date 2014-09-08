@@ -28,12 +28,10 @@
   <div class="flexslider">
     <ul class="slides">
       <li>
-				<!--
-<img src="images/bg.png" alt=""
+				<img src="images/bg.png" alt=""
 			    data-image-size-small="images/epitafio2-m.jpg"
 			    data-image-size-large="images/epitafio2.jpg" />
--->
-      	<img class="slide-image" src="images/epitafio2.jpg">
+      	<!-- <img class="slide-image" src="images/epitafio2.jpg"> -->
       </li>
       <li>
         <img class="slide-image" src="images/epitafio1.jpg">
@@ -149,13 +147,12 @@
 <script defer src="js/scripts.js"></script>
 
 <script>
-		// Conditional images
+	// Conditional images
 	// Global definitions
-	//var windowWidth;
+	var windowWidth;
 	
 	// Inject images based on window size
-	/*
-function injectImages(targetParentElement) {
+	function injectImages(targetParentElement) {
 	  windowWidth = $(window).width();
 	  $(targetParentElement + " img").each( function() {
 	    var target = $(this);
@@ -168,15 +165,12 @@ function injectImages(targetParentElement) {
 	    }
 	  });
 	
-	}
-*/ // end injectImages
+	} // end injectImages
 	
 	// on window resize... do this... 
-	/*
-$(window).on('resize', function() {
+	$(window).on('resize', function() {
 	  injectImages('.load-after-dom');
-	}).trigger('resize');
-*/ /// ( but also... trigger that event once... right when page loads.)
+	}).trigger('resize'); /// ( but also... trigger that event once... right when page loads.)
 
 </script>
 
