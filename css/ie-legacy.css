@@ -392,10 +392,10 @@ html[xmlns] .slides {
   text-indent: 100%;
   overflow: hidden;
   color: #fff;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  transition: all 1s ease;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
   height: 70px;
   width: 50px;
   top: 43%;
@@ -488,6 +488,243 @@ html[xmlns] .slides {
   /* 	margin-bottom: 60px; */
 }
 
+/* Preload images */
+/* line 2, ../sass/partials/components/_lightbox.scss */
+body:after {
+  content: url(../img/close.png) url(../img/loading.gif) url(../img/prev.png) url(../img/next.png);
+  display: none;
+}
+
+/* line 7, ../sass/partials/components/_lightbox.scss */
+.lightboxOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: black;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+  display: none;
+}
+
+/* line 18, ../sass/partials/components/_lightbox.scss */
+.lightbox {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  text-align: center;
+  line-height: 0;
+  font-weight: normal;
+}
+
+/* line 28, ../sass/partials/components/_lightbox.scss */
+.lightbox .lb-image {
+  display: block;
+  height: auto;
+  max-width: inherit;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+
+/* line 39, ../sass/partials/components/_lightbox.scss */
+.lightbox a img {
+  border: none;
+}
+
+/* line 43, ../sass/partials/components/_lightbox.scss */
+.lb-outerContainer {
+  position: relative;
+  background-color: white;
+  *zoom: 1;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+}
+
+/* line 57, ../sass/partials/components/_lightbox.scss */
+.lb-outerContainer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 63, ../sass/partials/components/_lightbox.scss */
+.lb-container {
+  padding: 4px;
+}
+
+/* line 67, ../sass/partials/components/_lightbox.scss */
+.lb-loader {
+  position: absolute;
+  top: 43%;
+  left: 0;
+  height: 25%;
+  width: 100%;
+  text-align: center;
+  line-height: 0;
+}
+
+/* line 77, ../sass/partials/components/_lightbox.scss */
+.lb-cancel {
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin: 0 auto;
+  background: url(../img/loading.gif) no-repeat;
+}
+
+/* line 85, ../sass/partials/components/_lightbox.scss */
+.lb-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+}
+
+/* line 94, ../sass/partials/components/_lightbox.scss */
+.lb-container > .nav {
+  left: 0;
+}
+
+/* line 98, ../sass/partials/components/_lightbox.scss */
+.lb-nav a {
+  outline: none;
+  background-image: url("data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==");
+}
+
+/* line 103, ../sass/partials/components/_lightbox.scss */
+.lb-prev, .lb-next {
+  height: 100%;
+  cursor: pointer;
+  display: block;
+}
+
+/* line 109, ../sass/partials/components/_lightbox.scss */
+.lb-nav a.lb-prev {
+  width: 34%;
+  left: 0;
+  float: left;
+  background: url(../img/prev.png) left 48% no-repeat;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transition: opacity 0.6s;
+  -moz-transition: opacity 0.6s;
+  -o-transition: opacity 0.6s;
+  transition: opacity 0.6s;
+}
+
+/* line 122, ../sass/partials/components/_lightbox.scss */
+.lb-nav a.lb-prev:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+/* line 127, ../sass/partials/components/_lightbox.scss */
+.lb-nav a.lb-next {
+  width: 64%;
+  right: 0;
+  float: right;
+  background: url(../img/next.png) right 48% no-repeat;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transition: opacity 0.6s;
+  -moz-transition: opacity 0.6s;
+  -o-transition: opacity 0.6s;
+  transition: opacity 0.6s;
+}
+
+/* line 140, ../sass/partials/components/_lightbox.scss */
+.lb-nav a.lb-next:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+/* line 145, ../sass/partials/components/_lightbox.scss */
+.lb-dataContainer {
+  margin: 0 auto;
+  padding-top: 5px;
+  *zoom: 1;
+  width: 100%;
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+/* line 158, ../sass/partials/components/_lightbox.scss */
+.lb-dataContainer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 164, ../sass/partials/components/_lightbox.scss */
+.lb-data {
+  padding: 0 4px;
+  color: #ccc;
+}
+
+/* line 169, ../sass/partials/components/_lightbox.scss */
+.lb-data .lb-details {
+  width: 85%;
+  float: left;
+  text-align: left;
+  line-height: 1.1em;
+}
+
+/* line 176, ../sass/partials/components/_lightbox.scss */
+.lb-data .lb-caption {
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1em;
+}
+
+/* line 182, ../sass/partials/components/_lightbox.scss */
+.lb-data .lb-number {
+  display: block;
+  clear: left;
+  padding-bottom: 1em;
+  font-size: 12px;
+  color: #999999;
+}
+
+/* line 190, ../sass/partials/components/_lightbox.scss */
+.lb-data .lb-close {
+  display: block;
+  float: right;
+  width: 30px;
+  height: 30px;
+  background: url(../img/close.png) top right no-repeat;
+  text-align: right;
+  outline: none;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+  -webkit-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+
+/* line 206, ../sass/partials/components/_lightbox.scss */
+.lb-data .lb-close:hover {
+  cursor: pointer;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
 /* line 1, ../sass/partials/components/_navigation.scss */
 h1 {
   font-family: "Montserrat", Helvetica, sans-serif;
@@ -558,102 +795,6 @@ h1 {
   display: block;
   visibility: visible;
   opacity: 1;
-}
-
-/* SLIMBOX */
-/* line 3, ../sass/partials/components/_slimbox2.scss */
-#lbOverlay {
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-  cursor: pointer;
-}
-
-/* line 14, ../sass/partials/components/_slimbox2.scss */
-#lbCenter, #lbBottomContainer {
-  position: absolute;
-  z-index: 9999;
-  overflow: hidden;
-  background-color: transparent;
-}
-
-/* line 21, ../sass/partials/components/_slimbox2.scss */
-.lbLoading {
-  background: white url(loading.gif) no-repeat center;
-}
-
-/* line 25, ../sass/partials/components/_slimbox2.scss */
-#lbImage {
-  position: absolute;
-  left: 0;
-  top: 0;
-  border: 1px solid #fff;
-  background-repeat: no-repeat;
-}
-
-/* line 33, ../sass/partials/components/_slimbox2.scss */
-#lbPrevLink, #lbNextLink {
-  display: block;
-  position: absolute;
-  top: 0;
-  width: 50%;
-  outline: none;
-}
-
-/* line 41, ../sass/partials/components/_slimbox2.scss */
-#lbPrevLink {
-  left: 0;
-}
-
-/* line 45, ../sass/partials/components/_slimbox2.scss */
-#lbPrevLink:hover {
-  background: transparent url(prevlabel.gif) no-repeat 0 15%;
-}
-
-/* line 49, ../sass/partials/components/_slimbox2.scss */
-#lbNextLink {
-  right: 0;
-}
-
-/* line 53, ../sass/partials/components/_slimbox2.scss */
-#lbNextLink:hover {
-  background: transparent url(nextlabel.gif) no-repeat 100% 15%;
-}
-
-/* line 57, ../sass/partials/components/_slimbox2.scss */
-#lbBottom {
-  font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
-  font-size: 10px;
-  color: #666;
-  line-height: 1.4em;
-  text-align: left;
-  /* border: 10px solid #fff; */
-  border-top-style: none;
-}
-
-/* line 67, ../sass/partials/components/_slimbox2.scss */
-#lbCloseLink {
-  display: block;
-  float: right;
-  width: 66px;
-  height: 22px;
-  background: transparent url(closelabel.gif) no-repeat center;
-  margin: 5px 0;
-  outline: none;
-}
-
-/* line 77, ../sass/partials/components/_slimbox2.scss */
-#lbCaption, #lbNumber {
-  margin-right: 71px;
-}
-
-/* line 81, ../sass/partials/components/_slimbox2.scss */
-#lbCaption {
-  font-weight: bold;
 }
 
 /* line 1, ../sass/partials/pages/_bio.scss */
