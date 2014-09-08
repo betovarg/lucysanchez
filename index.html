@@ -28,10 +28,12 @@
   <div class="flexslider">
     <ul class="slides">
       <li>
-				<img src="images/bg.png" alt="Epitafio"
+				<!--
+<img src="images/bg.png" alt="Epitafio"
 			    data-image-size-small="images/epitafio2-m.jpg"
 			    data-image-size-large="images/epitafio2.jpg" />
-      	<!-- <img class="slide-image" src="images/epitafio2.jpg"> -->
+-->
+      	<img class="slide-image" src="images/epitafio2.jpg">
       </li>
       <li>
         <img class="slide-image" src="images/epitafio1.jpg">
@@ -59,58 +61,58 @@
     <h2 class="title">Ilustraciones</h2>
     <ul>
       <li>
-	      <a href="gallery/full/14.jpg" rel="lightbox"><img src="gallery/14-thumb.jpg" /></a>
+	      <a href="gallery/full/14.jpg" data-lightbox="gallery"><img src="gallery/14-thumb.jpg" /></a>
       </li>
       <li>
-	      <a href="gallery/full/13.jpg" rel="lightbox"><img src="gallery/13-thumb.jpg" /></a>
+	      <a href="gallery/full/13.jpg" data-lightbox="gallery"><img src="gallery/13-thumb.jpg" /></a>
       </li>
       <li>
-	      <a href="gallery/full/1.jpg" rel="lightbox"><img src="gallery/1-thumb.jpg" /></a>
+	      <a href="gallery/full/1.jpg" data-lightbox="gallery"><img src="gallery/1-thumb.jpg" /></a>
       </li>
       <li>
-	      <a href="gallery/full/2.jpg" rel="lightbox"><img src="gallery/2-thumb.jpg" /></a>
+	      <a href="gallery/full/2.jpg" data-lightbox="gallery"><img src="gallery/2-thumb.jpg" /></a>
       </li>
       <li>
-	      <a href="gallery/full/3.jpg" rel="lightbox"><img src="gallery/3-thumb.jpg" /></a>
+	      <a href="gallery/full/3.jpg" data-lightbox="gallery"><img src="gallery/3-thumb.jpg" /></a>
       </li>
       <li>
-	      <a href="gallery/full/4.jpg" rel="lightbox"><img src="gallery/4-thumb.jpg" /></a>
+	      <a href="gallery/full/4.jpg" data-lightbox="gallery"><img src="gallery/4-thumb.jpg" /></a>
       </li>
 			<li>
-	      <a href="gallery/full/5.jpg" rel="lightbox"><img src="gallery/5-thumb.jpg" /></a>
+	      <a href="gallery/full/5.jpg" data-lightbox="gallery"><img src="gallery/5-thumb.jpg" /></a>
       </li>
       <li>
-	      <a href="gallery/full/6.jpg" rel="lightbox"><img src="gallery/6-thumb.jpg" /></a>
+	      <a href="gallery/full/6.jpg" data-lightbox="gallery"><img src="gallery/6-thumb.jpg" /></a>
       </li>
       <li>
-	      <a href="gallery/full/15.jpg" rel="lightbox"><img src="gallery/15-thumb.jpg" /></a>
+	      <a href="gallery/full/15.jpg" data-lightbox="gallery"><img src="gallery/15-thumb.jpg" /></a>
       </li>
       <li>
-	      <a href="gallery/full/16.jpg" rel="lightbox"><img src="gallery/16-thumb.jpg" /></a>
+	      <a href="gallery/full/16.jpg" data-lightbox="gallery"><img src="gallery/16-thumb.jpg" /></a>
       </li>
       <li>
-	      <a href="gallery/full/17.jpg" rel="lightbox"><img src="gallery/17-thumb.jpg" /></a>
+	      <a href="gallery/full/17.jpg" data-lightbox="gallery"><img src="gallery/17-thumb.jpg" /></a>
       </li>
       <li>
-	      <a href="gallery/full/18.jpg" rel="lightbox"><img src="gallery/18-thumb.jpg" /></a>
+	      <a href="gallery/full/18.jpg" data-lightbox="gallery"><img src="gallery/18-thumb.jpg" /></a>
       </li>
       <li>
-	      <a href="gallery/full/7.jpg" rel="lightbox"><img src="gallery/7-thumb.jpg" /></a>
+	      <a href="gallery/full/7.jpg" data-lightbox="gallery"><img src="gallery/7-thumb.jpg" /></a>
       </li>
       <li>
-	      <a href="gallery/full/8.jpg" rel="lightbox"><img src="gallery/8-thumb.jpg" /></a>
+	      <a href="gallery/full/8.jpg" data-lightbox="gallery"><img src="gallery/8-thumb.jpg" /></a>
       </li>
       <li>
-	      <a href="gallery/full/9.jpg" rel="lightbox"><img src="gallery/9-thumb.jpg" /></a>
+	      <a href="gallery/full/9.jpg" data-lightbox="gallery"><img src="gallery/9-thumb.jpg" /></a>
       </li>
       <li>
-	      <a href="gallery/full/10.jpg" rel="lightbox"><img src="gallery/10-thumb.jpg" /></a>
+	      <a href="gallery/full/10.jpg" data-lightbox="gallery"><img src="gallery/10-thumb.jpg" /></a>
       </li>
       <li>
-	      <a href="gallery/full/11.jpg" rel="lightbox"><img src="gallery/11-thumb.jpg" /></a>
+	      <a href="gallery/full/11.jpg" data-lightbox="gallery"><img src="gallery/11-thumb.jpg" /></a>
       </li>
       <li>
-	      <a href="gallery/full/12.jpg" rel="lightbox"><img src="gallery/12-thumb.jpg" /></a>
+	      <a href="gallery/full/12.jpg" data-lightbox="gallery"><img src="gallery/12-thumb.jpg" /></a>
       </li>
     </ul>
   </div>
@@ -142,37 +144,10 @@
 <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
 <script defer src="js/jquery.flexslider-min.js"></script>
 <script defer src="js/jquery.resizeimagetoparent.min.js"></script>
-<script type="text/javascript" src="js/slimbox2.js"></script>
+<script src="js/lightbox.min.js"></script>
+<!-- <script type="text/javascript" src="js/slimbox2.js"></script> -->
 <!-- <script src="js/jquery.unveil.js"></script> -->
 <script defer src="js/scripts.js"></script>
-
-<script>
-	// Conditional images
-	// Global definitions
-	var windowWidth;
-	
-	// Inject images based on window size
-	function injectImages(targetParentElement) {
-	  windowWidth = $(window).width();
-	  $(targetParentElement + " img").each( function() {
-	    var target = $(this);
-	    if ( windowWidth < 500 ) {
-	      var urlSmall = target.attr('data-image-size-small');
-	      target.attr('src', urlSmall);
-	    } else if ( windowWidth >= 501 ) {
-	      var urlLarge = target.attr('data-image-size-large');
-	      target.attr('src', urlLarge);
-	    }
-	  });
-	
-	} // end injectImages
-	
-	// on window resize... do this... 
-	$(window).on('resize', function() {
-	  injectImages('.load-after-dom');
-	}).trigger('resize'); /// ( but also... trigger that event once... right when page loads.)
-
-</script>
 
 </body>
 </html>
