@@ -24,6 +24,7 @@ $(document).ready(function() {
 	//executes flexslider
   $('.flexslider').flexslider({
     animation: "slide",
+    slideshowSpeed: 4000,
     animationSpeed: 1500,
     useCSS: true, 
     touch: true,
@@ -31,15 +32,12 @@ $(document).ready(function() {
     controlNav: false,
   });
 
-  //cover style images in slides
-  $('.slide-image').resizeToParent();
-
 	//lazy loading thumbnails
-	$(".gallery img").unveil(2, function() {
-  $(this).load(function() {
-    this.style.opacity = 1;
-  });
-});
+	//$(".gallery img").unveil(1, function() {
+	//  $(this).load(function() {
+	//    this.style.opacity = 1;
+	//  });
+	//});
 
 	//hero container to window height
   function setHeight() {
@@ -52,8 +50,18 @@ $(document).ready(function() {
     setHeight();
   });
 
+  //cover style images in slides
+  $('.slide-image').resizeToParent();
+
+
 });
 
+// hides slideshow next button on click
+$(function() {                       //run when the DOM is ready
+  $(".slides-go-down a").click(function() {  //use a class, since your ID gets mangled
+    $(".flex-next").addClass("hide");      //add the class to the clicked element
+  });
+});
 
 // back to top
 $(document).scroll(function () {
@@ -69,8 +77,8 @@ $(document).scroll(function () {
     //else {
     //  $('.flexslider').flexslider("play");
     }
-    if (y < 499) {
-			$('.flexslider').flexslider("play");
+		if (y < 1) {
+			$(".flex-next").removeClass("hide");
 		}
 });
 
