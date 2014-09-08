@@ -39,17 +39,22 @@ $(document).ready(function() {
     windowHeight = $(window).innerHeight();
     $('.hero-container').css('height', windowHeight);
   };
-  setHeight();
   
+  setHeight();
+
   $(window).resize(function() {
     setHeight();
   });
 
-  //cover style images in slides
-  //https://github.com/levymetal/jquery-resize-image-to-parent
-  $('.slide-image').resizeToParent();
-  //$('.slide-image').resizeToParent({parent: '.hero-container'});
+});
 
+
+//cover style images in slides
+//https://github.com/levymetal/jquery-resize-image-to-parent
+// $('.slide-image').resizeToParent();
+imagesLoaded( '.hero-container li', function() {
+  $('.slide-image').resizeToParent();
+  console.log('hola')
 });
 
 // hides slideshow next button on click
