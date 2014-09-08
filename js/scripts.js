@@ -107,14 +107,12 @@ $(window).on('resize', function() {
 }).trigger('resize'); /// ( but also... trigger that event once... right when page loads.)
 
 
-//remove lightbox on mobile
+//Lightbox added to desktop, no lilghtbox on mobile
 var lightboxOnResize = function lightboxOnResize() {
-    if ($(window).width() < 599) {
-        $('a[data-lightbox="gallery"]')
-            .removeAttr('data-lightbox')
-            .addClass('lightboxRemoved');
-    } else {
-        $('a.lightboxRemoved').prop('data-lightbox', 'gallery');
+    if ($(window).width() > 599) {
+        $('a.nolightbox')
+            .attr('data-lightbox', 'gallery')
+            .removeClass('nolightbox');
     }
 }
 
