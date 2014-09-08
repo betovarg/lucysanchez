@@ -1,7 +1,7 @@
 //Falta:
 // despausar el slider al volver arriba
 // recalcular imagen cuando se carga por primera vez, no se ve bien cuando carga en monitores pequeños
-// js para carga condicional de imagenes
+// js para carga condicional de imagenes, que recalcule
 
 // Scroll Anclas
 $(function() {
@@ -25,21 +25,16 @@ $(document).ready(function() {
   $('.flexslider').flexslider({
     animation: "slide",
     slideshowSpeed: 4000,
-    animationSpeed: 1500,
+    animationSpeed: 1000,
     useCSS: true, 
     touch: true,
     pauseOnAction: true,
     controlNav: false,
+    easing: 'easeInOutCubic',
   });
 
-	//lazy loading thumbnails
-	//$(".gallery img").unveil(1, function() {
-	//  $(this).load(function() {
-	//    this.style.opacity = 1;
-	//  });
-	//});
-
 	//hero container to window height
+	//https://j.eremy.net/set-element-height-to-viewport/
   function setHeight() {
     windowHeight = $(window).innerHeight();
     $('.hero-container').css('height', windowHeight);
@@ -51,15 +46,16 @@ $(document).ready(function() {
   });
 
   //cover style images in slides
+  //https://github.com/levymetal/jquery-resize-image-to-parent
   $('.slide-image').resizeToParent();
-
+  //$('.slide-image').resizeToParent({parent: '.hero-container'});
 
 });
 
 // hides slideshow next button on click
-$(function() {                       //run when the DOM is ready
-  $(".slides-go-down a").click(function() {  //use a class, since your ID gets mangled
-    $(".flex-next").addClass("hide");      //add the class to the clicked element
+$(function() {                       					//run when the DOM is ready
+  $(".slides-go-down a").click(function() {  	//use a class, since your ID gets mangled
+    $(".flex-next").addClass("hide");      		//add the class to the clicked element
   });
 });
 
@@ -82,3 +78,42 @@ $(document).scroll(function () {
 		}
 });
 
+// Conditional images
+// Global definitions
+var windowWidth;
+
+// Inject images based on window size
+function injectImages(targetParentElement) {
+  windowWidth = $(window).width();
+  $(targetParentElement + " img").each( function() {
+    var target = $(this);
+    if ( windowWidth < 500 ) {
+      var urlSmall = target.attr('data-image-size-small');
+      target.attr('src', urlSmall);
+    } else if ( windowWidth >= 501 ) {
+      var urlLarge = target.attr('data-image-size-large');
+      target.attr('src', urlLarge);
+    }
+  });
+
+} // end injectImages
+
+// on window resize... do this... 
+$(window).on('resize', function() {
+  injectImages('.load-after-dom');
+}).trigger('resize'); /// ( but also... trigger that event once... right when page loads.)
+
+
+//remove lightbox on mobile
+var lightboxOnResize = function lightboxOnResize() {
+    if ($(window).width() < 599) {
+        $('a[data-lightbox="gallery"]')
+            .removeAttr('data-lightbox')
+            .addClass('lightboxRemoved');
+    } else {
+        $('a.lightboxRemoved').prop('data-lightbox', 'gallery');
+    }
+}
+
+$(document).ready(lightboxOnResize);
+$(window).resize(lightboxOnResize);
