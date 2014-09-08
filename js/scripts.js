@@ -41,21 +41,16 @@ $(document).ready(function() {
   };
   
   setHeight();
+  // $('.slide-image').resizeToParent();
 
-  $(window).resize(function() {
+  /*$(window).resize(function() {
     setHeight();
-  });
+  });*/
+
+  $(window).trigger('resize');
 
 });
 
-
-//cover style images in slides
-//https://github.com/levymetal/jquery-resize-image-to-parent
-// $('.slide-image').resizeToParent();
-imagesLoaded( '.hero-container li', function() {
-  $('.slide-image').resizeToParent();
-  console.log('hola')
-});
 
 // hides slideshow next button on click
 $(function() {                       					//run when the DOM is ready
@@ -106,6 +101,9 @@ function injectImages(targetParentElement) {
 // on window resize... do this... 
 $(window).on('resize', function() {
   injectImages('.load-after-dom');
+  //cover style images in slides
+  //https://github.com/levymetal/jquery-resize-image-to-parent
+  $('.slide-image').resizeToParent();
 }).trigger('resize'); /// ( but also... trigger that event once... right when page loads.)
 
 
