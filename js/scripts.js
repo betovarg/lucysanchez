@@ -21,7 +21,7 @@ $(function() {
 
 $(document).ready(function() {
 	
-	//executes flexslider
+  //executes flexslider
   $('.flexslider').flexslider({
     animation: "slide",
     slideshowSpeed: 4000,
@@ -41,6 +41,7 @@ $(document).ready(function() {
   };
   
   setHeight();
+  $('.flexslider').resize();
   // $('.slide-image').resizeToParent();
 
   /*$(window).resize(function() {
