@@ -180,11 +180,11 @@ body:after {
 }
 
 .lb-data .lb-number {
-  display: block;
   clear: left;
   padding-bottom: 1em;
   font-size: 12px;
   color: #999999;
+  display: none !important;
 }
 
 .lb-data .lb-close {
