@@ -1,6 +1,4 @@
 //Falta:
-// despausar el slider al volver arriba
-// recalcular imagen cuando se carga por primera vez, no se ve bien cuando carga en monitores pequeños
 // js para carga condicional de imagenes, que recalcule
 
 // Scroll Anclas
