@@ -1,0 +1,26 @@
+{
+  "name": "lucysanchez",
+  "version": "1.0.0",
+  "description": "Landing page de Lucy Sanchez",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.8.8",
+    "gulp-concat": "^2.4.0",
+    "gulp-minify-html": "^0.1.5",
+    "gulp-uglify": "^1.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/betovarg/lucysanchez.git"
+  },
+  "author": "Manatí",
+  "license": "CC",
+  "bugs": {
+    "url": "https://github.com/betovarg/lucysanchez/issues"
+  },
+  "homepage": "https://github.com/betovarg/lucysanchez"
+}

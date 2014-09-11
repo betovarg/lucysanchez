@@ -1,0 +1,53 @@
+// z-index
+.header {
+  z-index: 10;
+}
+.hero-container {
+  z-index: 5;
+}
+.flexslider {
+  z-index: 5;
+}
+.under-slides {
+  z-index: 1;
+}
+
+// #header
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+// titles
+.title {
+  text-align: center;
+  margin: 0 0 50px;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  width: 130px;
+  margin: 0 auto 50px;
+  padding-bottom: 20px;
+  font-weight: 400;
+  font-size: 14px;
+  text-transform: uppercase;
+	position: relative;
+	&:after {
+		content: '';
+		border-bottom: solid 2px #fff;
+		width: 20px;
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		margin-left: -10px;		
+	}
+}
+
+.title:after {}
+
+.block-section {
+	padding-top: 40px;
+	padding-bottom: 40px;
+/* 	margin-bottom: 60px; */
+}
