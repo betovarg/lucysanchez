@@ -3,3 +3,4 @@
 ### Sass ###
 .sass-cache
 .DS_store
+node_modules
