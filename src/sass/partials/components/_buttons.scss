@@ -1,0 +1,11 @@
+.button {
+	@include border-radius(7px);
+	@include font-size(15);
+	line-height: 2;
+	display: inline-block;
+	background-color: #555;
+	padding: 10px 20px;
+	color: #fff;
+	font-family: "Montserrat";
+	font-weight: normal;
+}

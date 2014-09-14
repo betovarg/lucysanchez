@@ -1,0 +1,425 @@
+$store-accent-color: #FF0047;
+
+@include add-grid(10);
+@include add-gutter(1/3);
+
+.store {
+	color: #555;
+	background-color: #fff;
+	overflow: hidden;
+	text-align: center;
+	@include breakpoint(800px){
+		padding-left: 3%;
+		padding-right: 3%;
+	}
+	ul {
+		overflow: hidden;
+		padding: 0;
+		position: relative;
+		margin-bottom: 60px;
+		text-align: left;
+		@include breakpoint(0 430px){
+			text-align: center;
+		}
+	}
+	.title {
+		color: $store-accent-color;
+		@include font-size(24);
+		position: relative;
+		&:after {
+			border-color: $store-accent-color;
+		}
+	}
+}
+
+// product items and animation
+.product {
+	@extend %reset-list;
+	position: relative;
+	margin-bottom: 40px;
+	overflow: hidden;
+	@include breakpoint(0 679px){
+		left: 0;
+	}
+	@include breakpoint(430px 679px){
+		img {
+			float: left;
+			margin: 0 20px 20px 0;
+		}
+	}
+	@include breakpoint($tablet 799px){
+		@include float-span(4);
+		left: 0;
+		margin-right: 0;
+		min-height: 380px;
+		margin-bottom: 30px;
+	}
+	@include breakpoint(800px){
+		margin-bottom: 0;
+		@include float-span(2);
+	}
+	&:last-child {
+			margin-right: 0;
+	}
+}
+
+.product-details {
+	@include font-size(12);
+	line-height: 1.1;
+	color: #a2a2a2;
+}
+.product-image {
+	margin-bottom: 10px;
+	@include breakpoint($desktop){
+		min-height: 235px;
+	}
+}
+.product-title {
+	font-weight: 700;
+	font-family: 'Lato', Helvetica;
+	margin: 0 0 7px;
+	@include font-size(14);
+	color: #000;
+	line-height: 1.2;
+	.product:hover & {
+		color: $store-accent-color;
+		-webkit-transition: all .2s ease-out;
+			 -moz-transition: all .2s ease-out;
+				-ms-transition: all .2s ease-out;
+				 -o-transition: all .2s ease-out;
+						transition: all .2s ease-out;
+	}
+}
+.product-quantity {
+	font-family: 'Lato', Helvetica;
+	font-style: italic;
+	margin-bottom: 10px;
+}
+.price {
+	font-weight: 700;
+	@include font-size(14);
+	color: #000;
+	margin-bottom: 15px;
+}
+.button-buy {
+	@include font-size(12);
+	padding: 3px 20px 3px 0;
+	background: transparent;
+	border: solid 2px #fff;
+	color: $store-accent-color;
+	position: relative;
+	&:hover {
+		background: $store-accent-color;
+		color: #fff;
+		&:after {
+			border-color: transparent transparent transparent #fff;
+		}
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		right: 8px;
+		top: 9px;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 6px 0 6px 4px;
+		border-color: transparent transparent transparent $store-accent-color;
+	}
+	.product:hover & {
+		border: solid 2px $store-accent-color;
+		padding: 3px 20px 3px 10px;
+		&:hover {
+			color: #fff;
+			&:after {
+				border-color: transparent transparent transparent #fff;
+			}
+		}
+	}
+}
+
+.store-information {
+	padding-top: 20px;
+	border-top: solid 1px #e1e1e1;
+	text-align: left;
+	position: relative;
+	p {
+		@include font-size(14);
+	}
+	.open-shipping {
+		color: blue;
+		text-decoration: underline;
+		cursor: pointer;
+	}
+}
+
+.store-button {
+	margin-bottom: 40px;
+	background-color: $store-accent-color;
+	position: relative;
+	padding-right: 30px;
+	position: relative;
+	&:after {
+		content: '';
+		position: absolute;
+		right: 10px;
+		top: 17px;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 8px 0 8px 7px;
+		border-color: transparent transparent transparent #fff;
+	}
+}
+
+.csstransitions {
+	.store .title {
+		opacity: 0;
+		top: -100px;
+	}
+	.store.block-active .title {
+		opacity: 1;
+		top: 0;
+		-webkit-transition: all .5s ease-out;
+			 -moz-transition: all .5s ease-out;
+				-ms-transition: all .5s ease-out;
+				 -o-transition: all .5s ease-out;
+						transition: all .5s ease-out;
+	}
+	.product {
+		left: 15%;
+		opacity: 0;
+		-webkit-transition: all .85s ease-out;
+			 -moz-transition: all .85s ease-out;
+				-ms-transition: all .85s ease-out;
+				 -o-transition: all .85s ease-out;
+						transition: all .85s ease-out;
+		&:nth-child(2) {
+			left: 25%;
+			-webkit-transition-delay: .2s;
+			transition-delay: .2s;
+		}
+		&:nth-child(3) {
+			left: 30%;
+			-webkit-transition-delay: .4s;
+			transition-delay: .4s;
+		}
+		&:nth-child(4) {
+			left: 35%;
+			-webkit-transition-delay: .6s;
+			transition-delay: .6s;
+		}
+		&:nth-child(5) {
+			left: 40%;
+			-webkit-transition-delay: .6s;
+			transition-delay: .99s;
+		}
+		&:last-child {
+			-webkit-transition-delay: .8s;
+			transition-delay: .8s;
+		}
+	}
+	.block-active .product {
+		opacity: 1;
+		left: 0;
+		&:nth-child(1) {
+			margin-left: 0;
+		}
+	}
+	.button-buy {
+		-webkit-transition: all .2s ease-out;
+			 -moz-transition: all .2s ease-out;
+				-ms-transition: all .2s ease-out;
+				 -o-transition: all .2s ease-out;
+						transition: all .2s ease-out;
+	}
+	.store-button {
+		top: 60px;
+		opacity: 0;
+		-webkit-transition: all .3s ease-out;
+			 -moz-transition: all .3s ease-out;
+				-ms-transition: all .3s ease-out;
+				 -o-transition: all .3s ease-out;
+						transition: all .3s ease-out;
+		&:hover {
+			letter-spacing: 2px;
+		}
+	}
+	.block-active .store-button {
+		top: 0;
+		opacity: 1;
+	}
+}
+
+.shipping-info {
+	visibility: hidden;
+	opacity: 0;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: #fff;
+	z-index: 9999;
+	color: #333;
+	-webkit-transform: translateZ(0); //force repaint in webkit
+	  -webkit-transition: all .2s ease-out;
+			 -moz-transition: all .2s ease-out;
+				-ms-transition: all .2s ease-out;
+				 -o-transition: all .2s ease-out;
+						transition: all .2s ease-out;
+	.limiter {
+		padding: 5%;
+		@include breakpoint($tablet) {
+			padding: 10%;
+		}
+	}
+	h2 {
+		@include font-size(24);
+		color: $store-accent-color;
+		margin-bottom: 20px;
+		@include breakpoint($tablet) {
+			margin-bottom: 40px;
+			@include font-size(40);
+		}
+	}
+	h3 {
+		@include font-size(16);
+		margin-bottom: 10px;
+		@include breakpoint($tablet) {
+			@include font-size(20);
+			margin-bottom: 20px;
+		}
+	}
+	p {
+		@include font-size(13);
+		@include breakpoint($tablet) {
+			@include font-size(16);
+			margin-bottom: 20px;
+		}
+	}
+}
+.shipping-price {
+	@include font-size(14);
+	@include border-radius(5px);
+	background-color: lighten($store-accent-color, 20%);
+	padding: 5px 10px;
+	color: #fff;
+	display: inline-block;
+	@include breakpoint($tablet) {
+		@include font-size(24);
+		padding: 10px 15px;
+	}
+	.shipping-info-box:last-child & {
+		background-color: $store-accent-color;
+	}
+}
+
+.shipping-info,
+.product-full {
+	.close {
+		border: solid 2px #555;
+		background-color: transparent;
+		padding: 10px 20px 10px 30px;
+		color: #555;
+		margin-bottom: 20px;
+		line-height: 1;
+		position: relative;
+		@include font-size(13);
+		cursor: pointer;
+		@include breakpoint($tablet) {
+			margin-bottom: 50px;
+		}
+		&:after {
+			content: '';
+			position: absolute;
+			left: 10px;
+			top: 8px;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 8px 7px 8px 0;
+			border-color: transparent #555 transparent transparent;
+		}
+	}
+}
+
+@include add-grid(12);
+@include add-gutter(1);
+.shipping-info-box {
+	@include breakpoint($tablet) {
+		@include float-span(4);
+		margin-bottom: 0;
+	}
+	&:last-child {
+		margin-right: 0;
+	}
+	margin-bottom: 30px;
+}
+
+.product-full {
+	visibility: hidden;
+	opacity: 0;
+	width: 100%;
+	background-color: #fff;
+	z-index: 9999;
+	color: #333;
+	text-align: left;
+	.close {
+		@include breakpoint($tablet) {
+			position: absolute;
+			top: 8%;
+			left: 5%;
+		}
+	}
+	.limiter {
+		padding: 10% 5% 5% 5%;
+		overflow: hidden;
+	}
+	@include breakpoint($tablet) {
+		.left-column {
+			@include grid-span(4,1);
+		}
+		.center-column {
+			@include grid-span(2,5);
+		}
+		.right-column {
+			@include grid-span(5,7);
+		}
+	}
+	.price {
+		@include font-size(20);
+		color: $store-accent-color
+	}
+}
+.complementary-info {
+	border-top: solid 1px #e1e1e1;
+	padding-top: 20px;
+	color: #777;
+	h3 {
+		@include font-size(14);
+		font-weight: normal;
+		margin-bottom: 10px;
+		line-height: 1;
+		color: #333;
+	}
+	p {
+		@include font-size(13);
+		margin-bottom: 5px;
+		line-height: 1.1;
+	}
+	a {
+		color: blue;
+	}
+}
+
+// makes elements visible
+.visible-item {
+  visibility: visible;
+  opacity: 1;
+}
+
+// hides element
+.hide-element {
+	display: none !important;
+}

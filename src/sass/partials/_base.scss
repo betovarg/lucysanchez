@@ -1,0 +1,109 @@
+//fonts
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+//
+// Basic HTML elements
+//
+
+html {
+	font-size: 62.5%;
+	line-height: 1.4em;
+}
+
+body {
+  color: #fff;
+  margin: 0;
+  padding: 0;
+	font-family: "Lato";
+  background: $body-bg-color;
+} 
+
+.page {
+  @include font-size(14);
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+p, li, dd {
+  @include font-size(15);
+  line-height: 1.4em;
+}
+
+p {
+  margin: 0 0 0.7em 0;
+  @include font-size(20);
+}
+
+a, a.active {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0 0 1em 0;
+	font-weight: 600;
+	font-style: normal;
+	line-height: 1.2em;
+  font-family: "Montserrat";
+}
+
+h1 {
+	@include font-size(24);
+}
+
+h3 {
+	@include font-size(20);
+}
+
+h4 {
+	@include font-size(18);
+}
+
+h5 {
+	@include font-size(16);
+}
+
+h6 {
+	@include font-size(14);
+}
+
+ul {
+	margin: 0 0 0.5em 0;
+	padding: 0 0 0 3em;
+}
+
+table {
+  margin: 0;
+  background-color: transparent;
+  width: 100%; 
+  @include font-size(15); 
+	caption {
+		font-weight: 600;
+		padding: 0.5em;
+		margin: 0.5em auto;
+	} 
+  td, th {
+  	padding: 0.5em;
+  } 
+  thead th, tfoot th {
+  	font-weight: 600;
+  } 
+  tfoot th {
+  	border-top: 0.1em inset #000;
+  } 
+  thead th {
+  	border-bottom: 0.1em inset #000;
+  }
+} 
+
+tr.even, tr.odd {
+	background-color: transparent;
+}
