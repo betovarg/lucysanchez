@@ -1,6 +1,28 @@
-# Created by http://www.gitignore.io
+### OSX ###
+.DS_Store
+.AppleDouble
+.LSOverride
 
-### Sass ###
-.sass-cache
-.DS_store
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Directories potentially created on remote AFP share
 node_modules
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+#sass
+.sass-cache
+
+#npm debug
+npm-debug.log
