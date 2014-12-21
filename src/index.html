@@ -25,13 +25,14 @@
   </script>
 </head>
 <body>
+
   <a name="top"></a>
   <header class="header hide-on-show-product">
     <h1>Lucy Sánchez</h1>
     <nav class="main-nav grid">
       <ul>
         <li><a href="#gallery">Illustraciones</a></li>
-        <li><a href="#store">Tienda</a></li>
+        <!-- <li><a href="#store" class="menu-store">Tienda</a></li> -->
         <li><a href="#bio">Bio</a></li>
         <li><a href="#contact">Contacto</a></li>
       </ul>
@@ -114,7 +115,7 @@
 	      <a href="img/gallery/full/5.jpg" class="nolightbox"><img src="img/gallery/5-thumb.jpg" /></a>
       </li>
       <li>
-	      <a href="img/gallery/full/6.jpg" class="nolightbox"><img src="img/gallery/6-thumb.jpg" /></a>
+	      <a href="img/gallery/full/6.jpg" class="nolightbox" data-title="Cimarrona. Drupalcamp 2012"><img src="img/gallery/6-thumb.jpg" /></a>
       </li>
       <li>
 	      <a href="img/gallery/full/15.jpg" class="nolightbox"><img src="img/gallery/15-thumb.jpg" /></a>
@@ -137,9 +138,9 @@
       <li>
 	      <a href="img/gallery/full/9.jpg" class="nolightbox"><img src="img/gallery/9-thumb.jpg" /></a>
       </li>
-      <li>
+      <!-- <li>
 	      <a href="img/gallery/full/10.jpg" class="nolightbox"><img src="img/gallery/10-thumb.jpg" /></a>
-      </li>
+      </li> -->
       <li>
 	      <a href="img/gallery/full/11.jpg" class="nolightbox"><img src="img/gallery/11-thumb.jpg" /></a>
       </li>
@@ -148,7 +149,7 @@
       </li>
     </ul>
   </div>
-  <a name="store"></a>
+  <!-- <a name="store"></a>
   <div class="store block-section">
     <div class="grid">
       <h2 class="title">Tienda</h2>
@@ -168,7 +169,7 @@
               40cm X 20cm
             </div>
             <div class="product-quantity">
-              Edición: 25 ejemeplares
+              Edición: 25 ejemplares
             </div>
             <div class="price">$40</div>
             <a href="#" class="button button-buy">
@@ -191,7 +192,7 @@
               40cm X 20cm
             </div>
             <div class="product-quantity">
-              Edición: 25 ejemeplares
+              Edición: 25 ejemplares
             </div>
             <div class="price">$40</div>
             <a href="#" class="button button-buy">
@@ -214,7 +215,7 @@
               40cm X 20cm
             </div>
             <div class="product-quantity">
-              Edición: 25 ejemeplares
+              Edición: 25 ejemplares
             </div>
             <div class="price">$40</div>
             <a href="#" class="button button-buy">
@@ -237,7 +238,7 @@
               40cm X 20cm
             </div>
             <div class="product-quantity">
-              Edición: 25 ejemeplares
+              Edición: 25 ejemplares
             </div>
             <div class="price">$40</div>
             <a href="#" class="button button-buy">
@@ -260,7 +261,7 @@
               40cm X 20cm
             </div>
             <div class="product-quantity">
-              Edición: 25 ejemeplares
+              Edición: 25 ejemplares
             </div>
             <div class="price">$40</div>
             <a href="#" class="button button-buy">
@@ -269,14 +270,14 @@
           </div>
         </li>
       </ul>
-      <!-- <a href="#" class="button store-button">
+      <a href="#" class="button store-button">
         Ver todos los productos
-      </a> -->
+      </a>
       <div class="store-information">
         <p>Los productos actualmente se venden a traves de depósito a cuenta bancaria. Los productos se envían a través de Correos de Costa Rica. <span class="open-shipping">Ver opciones de envío ></span></p>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <a name="bio"></a>
   <div class="bio block-section">
@@ -291,6 +292,7 @@
   <div class="contact grid block-section">
     <h2 class="title">Contacto</h2>
     <a class="ml" href="mailto:hola@lulusanchez.com">hola@lulusanchez.com</a>
+    <b class="tel">Tel: +506 8898-4694</b> 
 		<nav class="social-menu">
 			<ul>
 				<li><a class="social-item fb" target="_blank" href="https://www.facebook.com/pages/Lucy-S%C3%A1nchez/1468923746703229">Facebook</a></li>
@@ -300,7 +302,7 @@
   </div>
 </div> <!-- content container -->
 
-<div class="product-full">
+<!-- <div class="product-full">
   <div class="limiter">
     <span class="button close">
       Volver
@@ -322,23 +324,56 @@
           40cm X 20cm
         </div>
         <div class="product-quantity">
-          Edición: 25 ejemeplares
+          Edición: 25 ejemplares
         </div>
         <div class="price">Precio: $40</div>
         <div class="complementary-info">
           <h3>Precio del envío</h3>
-          <p>Envío por correo: <b>$10</b></p>
-          <p>¿Desea recoger el producto? <a href="#">Concertemos una cita</a></p>
+          <ul>
+            <li>Envío por correo: $10</li>
+            <li>Si desea, puede recoger el producto (sin costo adicional).</li>
+          </ul>
+          <h3>Opciones de pago</h3>
+          <p>Depósito a cuenta bancaria, contra verificación de número de depósito.</p>
         </div>
       </div>
     </div>
-    <div class="right-column">
-      <p>Aquí ponemos un form con campos simples, para que el cliente contacte</p>
+    <div class="right-column form-container">
+      <h2>Formulario de compra</h2>
+      <p>Complete el formulario y le estaré contactanto en las próximas 24 horas para concertar la compra.</p>
+      <form action="">
+        <div class="form-item">
+          <label for="">Nombre completo</label>
+          <input type="text">
+        </div>
+        <div class="form-item">
+          <label for="">Teléfono</label>
+          <input type="text">
+        </div>
+        <div class="form-item">
+          <label for="">Email</label>
+          <input type="text">
+        </div>
+        <div class="form-item radio-container">
+          <label for="">Opciones de envío</label>
+          <div class="radio">
+            <input type="radio" name="envio" id="enviar" value="Enviar">
+            <label for="enviar">Quiero pagar el envío del producto</label>
+          </div>
+          <div class="radio">
+            <input type="radio" name="envio" id="recoger" value="Enviar">
+            <label for="recoger">Quiero recoger el producto</label>
+          </div>
+        </div>
+        <input type="submit" class="button button-arrow" value="ENVIAR INFORMACIÓN >">
+        <div class="store-contact">¿Tiene algún problema? Contácteme al +506 8898-4694</div>
+      </form>
+      
     </div>
   </div>
-</div>
+</div> -->
 
-<div class="shipping-info">
+<!-- <div class="shipping-info">
   <div class="limiter">
     <span class="button close">
       Volver
@@ -366,7 +401,7 @@
       </span>
     </div>
   </div>
-</div>
+</div> -->
 
 <!-- back to top -->
 <a href="#top" class="back-to-top">
