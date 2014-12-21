@@ -15,7 +15,11 @@
 		}
 	}
 }
-
+.tel {
+	@include font-size(13);
+	margin-bottom: 20px;
+	display: inline-block;
+}
 .ml {
 	color: #81f8e2;
 	font-size: 14px;
@@ -41,14 +45,17 @@
 	height: 36px;
 	text-indent: 100%;
 	overflow: hidden;
-	background-image: url(../img/social.svg);
+	background-image: url(../img/sprite.png);
+	.svg & {
+		background-image: url(../img/sprite.svg);
+	}
 	background-repeat: no-repeat;
 	background-color: darken($body-bg-color, 5%);
 	@include border-radius(100%);
 }
 .fb {
-	background-position: center -10px;
+	background-position: center -242px;
 }
 .tw {
-	background-position: center -70px;
+	background-position: center -302px;
 }

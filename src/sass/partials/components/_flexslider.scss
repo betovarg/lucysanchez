@@ -42,7 +42,7 @@
   h3 {
 	  font-weight: 400;
 	  font-size: 15px;
-	  color: #00d5d8;
+	  color: $under-accent-color;
   }
 }
 
@@ -64,21 +64,27 @@
     width: 	80px;
     overflow: hidden;
 		text-indent: 100%;
-    background: #00d5d8 url(../img/slide-down.svg) no-repeat center;
+    background-color: $under-accent-color;
+    background-image: url(../img/sprite.png);
+    .svg & {
+      background-image: url(../img/sprite.svg);
+    }
+    background-repeat: no-repeat;
+    background-position: center -109px;
     @include border-radius(50px);
     -webkit-transition:  	all .3s ease;
 	   -moz-transition:  		all .3s ease;
 	   -o-transition:  			all .3s ease;
 	   transition:  				all .3s ease;
 	  &:hover {
-			background-color: darken(#00d5d8, 5%)  
+			background-color: darken($under-accent-color, 5%)  
 	  }
   }
 }
 
 .hero-container {
   overflow: hidden;
-  background: #333;
+  background: #4B4742;
   height: 100%;
   @include breakpoint($desktop) {
 	  min-height: 500px;
@@ -93,8 +99,9 @@
 
 .flexslider .slides > li  {
     display:  none;
-     -webkit-backface-visibility:  hidden;
-     overflow:  hidden;
+   -webkit-backface-visibility:  hidden;
+   overflow:  hidden;
+   -webkit-transform: translateZ(0);
 }
  /* Hide the slides before the JS is loaded. Avoids image jumping */
 .flexslider .slides img  {
@@ -209,8 +216,13 @@ html[xmlns] .slides  {
      right:  0;
      text-align:  right;
      opacity: 1;
-     background: url(../img/slide-next.svg) no-repeat center;
-     background-color: rgba(0,204,255,0.8);
+     .svg & {
+      background-image: url(../img/slide-next.svg);
+     }
+     background-image: url(../img/slide-next.png);
+     background-repeat: no-repeat;
+     background-position: center;
+     background-color: $flexslider-next-accent;
      background-size: 25px 54px;
      text-indent: 100%;
      overflow: hidden;
@@ -233,11 +245,11 @@ html[xmlns] .slides  {
 	     width: 50px;
 	     top: 0;
 	     margin-top: 0;
-	     background-color: rgba(0,204,255,0.5);
+	     background-color: $flexslider-next-accent;
 	     background-size: auto;
      }
      &:hover {
-	     background-color: rgba(0,204,255,0.9);
+	     background-color: $flexslider-next-accent ;
 	     width: 50px;
      }
      @include breakpoint($desktop) {

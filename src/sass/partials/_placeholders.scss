@@ -1,3 +1,8 @@
+// add border box to element
+%border-box {
+  box-sizing: border-box;
+}
+// remove bullets from lists
 %reset-list {
   list-style-type: none;
 }
