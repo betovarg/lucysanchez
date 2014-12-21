@@ -39,7 +39,7 @@ function notifyLivereload(event) {
   // gulp.watch() events provide an absolute path
   // so we need to make it relative to the server root
   var fileName = require('path').relative(EXPRESS_ROOT, event.path);
- 
+
   lr.changed({
     body: {
       files: [fileName]
@@ -90,6 +90,6 @@ gulp.task('default', function () {
 
   startExpress();
   startLivereload();
-  gulp.watch('compiled/*', notifyLivereload);
-  gulp.watch('compiled/css/*', notifyLivereload);
+  gulp.watch(EXPRESS_ROOT+'/*', notifyLivereload);
+  gulp.watch(EXPRESS_ROOT+'/css/*', notifyLivereload);
 });
