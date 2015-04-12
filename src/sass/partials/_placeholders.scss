@@ -6,3 +6,8 @@
 %reset-list {
   list-style-type: none;
 }
+// inline block
+%inline-block {
+  display: inline-block;
+  vertical-align: top;
+}

@@ -26,26 +26,26 @@ module.exports = function (grunt) {
     assemble: {
       options: {
         collections: [{
-          name: 'post',
-          sortby: 'posted',
-          sortorder: 'descending'
+          name: 'product',
+          sortby: 'weight',
+          sortorder: 'ascending'
         }],
         assets: './dist/images',
-        helpers: './src/templates/helpers/**/*.js',
+        // helpers: './src/assemble_templates/helpers/**/*.js',
         layout: 'page.hbs',
-        layoutdir: './src/templates/layouts/',
-        partials: './src/templates/partials/**/*'
+        layoutdir: './src/assemble_templates/layouts/',
+        partials: './src/assemble_templates/partials/**/*'
       },
-      posts: {
+      pages: {
         // this array looks for content not in pages folder
         files: [{
-          cwd: './src/content/',
+          cwd: './src/assemble_content/',
           dest: './dist/',
           expand: true,
           src: ['**/*.hbs', '!_pages/**/*.hbs']
         }, {
           // this array looks for content in pages
-          cwd: './src/content/_pages/',
+          cwd: './src/assemble_content/_pages/',
           dest: './dist/',
           expand: true,
           src: '**/*.hbs'
@@ -53,11 +53,54 @@ module.exports = function (grunt) {
       }
     },
 
+    // Uglify
+    uglify: {
+      js: {
+        files: {
+          'dist/js/app.js': [
+            'src/js/jquery.flexslider-min.js', 
+            'src/js/jquery.resizeimagetoparent.min.js', 
+            'src/js/lightbox.min.js', 
+            'src/js/picturefill.min.js', 
+            'src/js/scripts.js',
+            'src/js/waypoints.min.js'
+            ]
+        }
+      }
+    },
+
+    // htmlmin
+    htmlmin: {                                     // Task
+      dist: {                                      // Target
+        options: {                                 // Target options
+          removeComments: false,
+          collapseWhitespace: true
+        },
+        files: {                                   // Dictionary of files
+          'dist/index.html': 'src/index.html',     // 'destination': 'source'
+        }
+      }
+    },
+
     // watch task
     watch: {
+      // index: {
+      //   files: 'src/index.html',
+      //   tasks: ['htmlmin'],
+      //   options: {
+      //     livereload: true,
+      //   },
+      // },
       html: {
         files: '**/*.hbs',
         tasks: ['assemble'],
+        options: {
+          livereload: true,
+        },
+      },
+      js: {
+        files: 'src/js/*',
+        tasks: ['uglify'],
         options: {
           livereload: true,
         },
@@ -76,6 +119,8 @@ module.exports = function (grunt) {
   /* grunt tasks */
   grunt.registerTask('serve', [
     'assemble',
+    'htmlmin',
+    'uglify',
     'connect:server',
     'watch'
     ]);

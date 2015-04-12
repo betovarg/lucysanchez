@@ -2,6 +2,34 @@
 @include add-gutter(1/3);
 
 .gallery {
+	height: auto;
+	position: relative;
+  &.section-collapsed {
+		max-height: 800px;
+		@include breakpoint($tablet) {
+			max-height: 700px;
+		}
+		@include breakpoint($full-width) {
+			max-height: 800px;
+		}
+		overflow: hidden;
+		&:after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			display: block;
+			width: 100%;
+			height: 150px;
+			z-index: 12;
+			background: -moz-linear-gradient(top,  rgba(40,26,44,0) 0%, rgba(40,26,44,1) 97%, rgba(40,26,44,1) 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(40,26,44,0)), color-stop(97%,rgba(40,26,44,1)), color-stop(100%,rgba(40,26,44,1))); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top,  rgba(40,26,44,0) 0%,rgba(40,26,44,1) 97%,rgba(40,26,44,1) 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top,  rgba(40,26,44,0) 0%,rgba(40,26,44,1) 97%,rgba(40,26,44,1) 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top,  rgba(40,26,44,0) 0%,rgba(40,26,44,1) 97%,rgba(40,26,44,1) 100%); /* IE10+ */
+			background: linear-gradient(to bottom,  rgba(40,26,44,0) 0%,rgba(40,26,44,1) 97%,rgba(40,26,44,1) 100%); /* W3C */
+		}
+	}
 	ul {
 		overflow: hidden;
 		padding: 0;
@@ -9,12 +37,14 @@
 	li {
 		margin-bottom: 20px;
 		@extend %reset-list;
-		@include breakpoint(401px 767px) {
+		@include breakpoint(320px 767px) {
+			@include add-gutter(1/2);
 			@include float-span(6);
 			&:nth-child(2n+0) {
 				margin-right: 0; 
 				// adds line break
 			}
+			margin-bottom: 10px;
 		}
 		@include breakpoint(768px 959px) {
 			@include float-span(4);
@@ -31,8 +61,32 @@
 			}
 		}
 	}
-	img {
-		//opacity: 0;
-		//transition: opacity .3s ease-in;
+}
+
+// show gallery button
+.show-button {
+	// @include border-radius(7px);
+	@include text-shadow(1px 1px 3px rgba(0,0,0,0.8));
+	@include box-shadow(1px 1px 3px rgba(0,0,0,0.8));
+	@include font-size(13);
+	position: absolute;
+	width: 120px;
+	margin-left: -75px;
+	color: #281A2C;
+	background-color: $flexslider-next-accent;
+	color: #fff;
+	bottom: 20px;
+	left: 50%;
+	z-index: 15;
+	padding: 11px 15px;
+	display: block;
+	cursor: pointer;
+	&:after {
+		content: '\2193';
+		position: absolute;
+		right: 10px;
+		top: 10px;
+		display: block;
+		@include font-size(16);
 	}
 }

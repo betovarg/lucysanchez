@@ -6,26 +6,59 @@
 	background-color: #fff;
 	overflow: hidden;
 	text-align: center;
-	@include breakpoint(800px){
+	@include breakpoint(800px) {
 		padding-left: 3%;
 		padding-right: 3%;
 	}
 	ul {
-		overflow: hidden;
+		// overflow: hidden;
 		padding: 0;
 		position: relative;
 		margin-bottom: 60px;
 		text-align: left;
-		@include breakpoint(0 430px){
+		@include breakpoint(0 430px) {
 			text-align: center;
 		}
 	}
+	.store-heading {
+		overflow: hidden;
+		margin-bottom: 10px;
+	}
 	.title {
-		color: $store-accent-color;
+		@include breakpoint($tablet) {
+			text-align: left;
+			display: block;
+			width: auto;
+			float: left;
+		}
 		@include font-size(24);
+		margin-bottom: 10px;
+		border-bottom: 0;
+		padding-bottom: 0;
+		color: $store-accent-color;
 		position: relative;
 		&:after {
-			border-color: $store-accent-color;
+			display: none;
+		}
+	}
+	.title-paypal {
+		margin-bottom: 30px;
+		@include font-size(12);
+		color: #000;
+		font-weight: bold;
+		position: relative;
+		img {
+			vertical-align: middle;
+			width: 70px;
+		}
+		@include breakpoint($tablet) {
+			padding-right: 20px;
+			float: right;
+			margin-bottom: 0;
+			@include font-size(14);
+			img {
+				width: 90px;
+			}
 		}
 	}
 }
@@ -35,26 +68,40 @@
 	@extend %reset-list;
 	position: relative;
 	margin-bottom: 40px;
-	overflow: hidden;
-	@include breakpoint(0 679px){
+	// overflow: hidden;
+	@include breakpoint(0 679px) {
 		left: 0;
 	}
-	@include breakpoint(430px 679px){
+	@include breakpoint(430px 679px) {
+		overflow: hidden;
+		padding: 3px 0 0 3px;
 		img {
 			float: left;
 			margin: 0 20px 20px 0;
+			width: 50%;
 		}
 	}
-	@include breakpoint($tablet 799px){
-		@include float-span(4);
+	@include breakpoint($tablet 799px) {
+		display: inline-block;
+		vertical-align: top;
+		width: 30%;
 		left: 0;
-		margin-right: 0;
+		margin-right: 2%;
 		min-height: 380px;
 		margin-bottom: 30px;
+		&:nth-child(3n) {
+			margin-right: 0%;
+		}
 	}
-	@include breakpoint(800px){
-		margin-bottom: 0;
-		@include float-span(2);
+	@include breakpoint(800px) {
+		margin-bottom: 20px;
+		display: inline-block;
+		vertical-align: top;
+		width: 20%;
+		margin-right: 6%;
+		&:nth-child(4n) {
+			margin-right: 0%;
+		}
 	}
 	&:last-child {
 			margin-right: 0;
@@ -63,12 +110,15 @@
 
 .product-details {
 	@include font-size(12);
-	line-height: 1.1;
+	line-height: 1.3;
 	color: #a2a2a2;
 }
 .product-image {
 	margin-bottom: 10px;
-	@include breakpoint($desktop){
+	img {
+		@include single-box-shadow(0, 1px, 1px, 1px, rgba(0,0,0,0.15), null);
+	}
+	@include breakpoint($desktop) {
 		min-height: 235px;
 	}
 }
@@ -76,28 +126,45 @@
 	font-weight: 700;
 	font-family: 'Lato', Helvetica;
 	margin: 0 0 7px;
+	padding: 0;
 	@include font-size(14);
-	color: #000;
 	line-height: 1.2;
+	a {
+		color: #000;
+	}
 	.product:hover & {
-		color: $store-accent-color;
-		-webkit-transition: all .2s ease-out;
-			 -moz-transition: all .2s ease-out;
-				-ms-transition: all .2s ease-out;
-				 -o-transition: all .2s ease-out;
-						transition: all .2s ease-out;
+		a {
+			color: $store-accent-color;
+			-webkit-transition: all .2s ease-out;
+				 -moz-transition: all .2s ease-out;
+					-ms-transition: all .2s ease-out;
+					 -o-transition: all .2s ease-out;
+							transition: all .2s ease-out;
+		}
 	}
 }
 .product-quantity {
 	font-family: 'Lato', Helvetica;
 	font-style: italic;
-	margin-bottom: 10px;
+	margin-bottom: 15px;
 }
 .price {
 	font-weight: 700;
 	@include font-size(14);
 	color: #000;
-	margin-bottom: 15px;
+	margin-bottom: 10px;
+}
+.price-preview {
+	margin-bottom: 5px;
+	span {
+		width: 80px;
+		display: inline-block;
+		vertical-align: top;
+	}
+}
+.price-preview-small {
+	@include font-size(12);
+	color: #555;
 }
 .button-buy {
 	@include font-size(12);
@@ -172,81 +239,80 @@
 }
 
 .csstransitions {
-	.store .title {
-		opacity: 0;
-		top: -100px;
-	}
-	.store.block-active .title {
-		opacity: 1;
-		top: 0;
-		-webkit-transition: all .5s ease-out;
-			 -moz-transition: all .5s ease-out;
-				-ms-transition: all .5s ease-out;
-				 -o-transition: all .5s ease-out;
-						transition: all .5s ease-out;
-	}
-	.product {
-		left: 15%;
-		opacity: 0;
-		-webkit-transition: all .85s ease-out;
-			 -moz-transition: all .85s ease-out;
-				-ms-transition: all .85s ease-out;
-				 -o-transition: all .85s ease-out;
-						transition: all .85s ease-out;
-		&:nth-child(2) {
-			left: 25%;
-			-webkit-transition-delay: .2s;
-			transition-delay: .2s;
+	@include breakpoint($desktop) {
+		.store .title,
+		.store .title-paypal {
+			opacity: 0;
+			top: -100px;
 		}
-		&:nth-child(3) {
-			left: 30%;
-			-webkit-transition-delay: .4s;
-			transition-delay: .4s;
+		.store.block-active .title,
+		.store.block-active .title-paypal {
+			opacity: 1;
+			top: 0;
+			-webkit-transition: all .5s ease-out;
+				 -moz-transition: all .5s ease-out;
+					-ms-transition: all .5s ease-out;
+					 -o-transition: all .5s ease-out;
+							transition: all .5s ease-out;
 		}
-		&:nth-child(4) {
-			left: 35%;
-			-webkit-transition-delay: .6s;
-			transition-delay: .6s;
+		.product {
+			left: 15%;
+			opacity: 0;
+			-webkit-transition: all .85s ease-out;
+				 -moz-transition: all .85s ease-out;
+					-ms-transition: all .85s ease-out;
+					 -o-transition: all .85s ease-out;
+							transition: all .85s ease-out;
+			&:nth-child(2) {
+				left: 25%;
+				-webkit-transition-delay: .2s;
+				transition-delay: .2s;
+			}
+			&:nth-child(3) {
+				left: 30%;
+				-webkit-transition-delay: .4s;
+				transition-delay: .4s;
+			}
+			&:nth-child(4) {
+				left: 35%;
+				-webkit-transition-delay: .6s;
+				transition-delay: .6s;
+			}
+			// &:last-child {
+			// 	-webkit-transition-delay: .8s;
+			// 	transition-delay: .8s;
+			// }
 		}
-		&:nth-child(5) {
-			left: 40%;
-			-webkit-transition-delay: .6s;
-			transition-delay: .99s;
+		.block-active .product {
+			opacity: 1;
+			left: 0;
+			&:nth-child(1) {
+				margin-left: 0;
+			}
 		}
-		&:last-child {
-			-webkit-transition-delay: .8s;
-			transition-delay: .8s;
+		.button-buy {
+			-webkit-transition: all .2s ease-out;
+				 -moz-transition: all .2s ease-out;
+					-ms-transition: all .2s ease-out;
+					 -o-transition: all .2s ease-out;
+							transition: all .2s ease-out;
 		}
-	}
-	.block-active .product {
-		opacity: 1;
-		left: 0;
-		&:nth-child(1) {
-			margin-left: 0;
+		.store-button {
+			top: 60px;
+			opacity: 0;
+			-webkit-transition: all .3s ease-out;
+				 -moz-transition: all .3s ease-out;
+					-ms-transition: all .3s ease-out;
+					 -o-transition: all .3s ease-out;
+							transition: all .3s ease-out;
+			&:hover {
+				letter-spacing: 2px;
+			}
 		}
-	}
-	.button-buy {
-		-webkit-transition: all .2s ease-out;
-			 -moz-transition: all .2s ease-out;
-				-ms-transition: all .2s ease-out;
-				 -o-transition: all .2s ease-out;
-						transition: all .2s ease-out;
-	}
-	.store-button {
-		top: 60px;
-		opacity: 0;
-		-webkit-transition: all .3s ease-out;
-			 -moz-transition: all .3s ease-out;
-				-ms-transition: all .3s ease-out;
-				 -o-transition: all .3s ease-out;
-						transition: all .3s ease-out;
-		&:hover {
-			letter-spacing: 2px;
+		.block-active .store-button {
+			top: 0;
+			opacity: 1;
 		}
-	}
-	.block-active .store-button {
-		top: 0;
-		opacity: 1;
 	}
 }
 
@@ -317,18 +383,19 @@
 .shipping-info,
 .product-full {
 	.close {
-		border: solid 2px #555;
+		@include breakpoint($tablet) {
+			margin-bottom: 20px;
+			padding: 10px 20px 10px 30px;
+			@include font-size(13);
+		}
+		border: solid 1px #D2D2D2;
 		background-color: transparent;
-		padding: 10px 20px 10px 30px;
+		padding: 10px 10px 10px 22px;
 		color: #555;
-		margin-bottom: 20px;
 		line-height: 1;
 		position: relative;
-		@include font-size(13);
+		@include font-size(11);
 		cursor: pointer;
-		@include breakpoint($tablet) {
-			margin-bottom: 50px;
-		}
 		&:after {
 			content: '';
 			position: absolute;
@@ -357,27 +424,97 @@
 }
 
 .product-full {
-	visibility: hidden;
-	opacity: 0;
 	width: 100%;
 	background-color: #fff;
 	z-index: 9999;
 	color: #333;
 	text-align: left;
-	.close {
-		@include breakpoint($tablet) {
-			position: absolute;
-			top: 8%;
-			left: 5%;
+	padding-bottom: 40px;
+	.product-image {
+		display: block;
+		position: relative;
+		margin-bottom: 20px;
+		&:after {
+			content: 'zoom';
+			@include font-size(12);
+			float: right;
+			margin-bottom: 10px;
+			color: #888;
+		}
+		img {
+			@include single-box-shadow(0, 1px, 1px, 1px, rgba(0,0,0,0.3), null);
 		}
 	}
+	.grid {
+		padding: 20px 20px 10px;
+	}
+	.site-title {
+		@include breakpoint($tablet) {
+			@include font-size(25);
+			float: none;
+		}
+		@include font-size(16);
+		a {
+		  color: #fff;
+		  &:visited,
+		  &:active {
+		    color: #000;
+		  }
+		}
+		float: right;
+		font-family: "Montserrat", Helvetica, sans-serif;
+		line-height: 1;
+		margin: 10px 0 15px;
+	}
 	.limiter {
-		padding: 10% 5% 5% 5%;
+		padding: 10px 20px 20px;
 		overflow: hidden;
+	}
+	.product-title {
+		@include font-size(20);
+		color: #000;
+		margin-bottom: 10px;
+	}
+	.buy-now-title {
+		@include breakpoint($tablet) {
+			margin-bottom: 40px;
+		}
+		@include font-size(14);
+		color: #000;
+		font-family: 'Lato', Helvetica;
+		border-bottom: solid 1px #e1e1e1;
+		padding-bottom: 5px;
+		margin-bottom: 20px;
+	}
+	.paypal-logo {
+		vertical-align: middle;
+	}
+	.buy-online {
+		margin-bottom: 30px;
+		@include breakpoint($tablet) {
+			margin-bottom: 50px;
+		}
+	}
+	.buy-deposit {
+		.buy-now-title {
+			margin-bottom: 20px;
+		}
+		h4 {
+			@include font-size(12);
+			color: #000;
+			font-weight: normal;
+			margin-bottom: 5px;
+		}
+		p {
+			@include font-size(12);
+		}
 	}
 	@include breakpoint($tablet) {
 		.left-column {
 			@include grid-span(4,1);
+		}
+		.center-top {
+			@include grid-span(2.5,5);
 		}
 		.center-column {
 			@include grid-span(2.5,5);
@@ -385,10 +522,28 @@
 		.right-column {
 			@include grid-span(4,7.5);
 		}
+		// .buy-option {
+		// 	display: inline-block;
+		// 	vertical-align: top;
+		// }
+		// .buy-framed {
+		// 	width: 49%;
+		// }
+		// .buy-print {
+		// 	width: 49%;
+		// }
 	}
 	.price {
 		@include font-size(20);
-		color: $store-accent-color;
+		color: $submit-paypal-color;
+		margin-bottom: 15px;
+		span {
+			font-weight: normal;
+		}
+	}
+	.price-small {
+		color: $submit-paypal-secondary-color;
+		@include font-size(15)
 	}
 }
 .complementary-info {
@@ -422,12 +577,19 @@
 		color: blue;
 	}
 }
-
+.complementary-notice {
+	font-weight: bold;
+	color: $submit-paypal-color;
+}
 .store-contact {
 	border-top: solid 1px #e1e1e1;
 	padding-top: 10px;
 	@include font-size(13);
 	margin-bottom: 60px;
+}
+
+.share-toolbar {
+	margin-bottom: 10px;
 }
 
 // makes elements visible

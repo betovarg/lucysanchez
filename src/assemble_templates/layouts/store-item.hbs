@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html  class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lucy Sánchez | Tienda | "{{ this.page.title }}"</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <meta property="og:title" content="Lucy Sánchez | {{ this.page.title }}" />
+  <meta property="og:image" content="http://www.lulusanchez.com/img/store/{{ this.page.image }}" />
+  <meta property="og:description" content="Precio: ${{ this.page.priceframed }}USD, {{ this.page.technique }}, {{ this.page.size }}" />
+  {{>header-html}}
+</head>
+<body>
+<div class="product-full">
+  <div class="grid">
+    <h2 class="site-title">
+      <a href="/">
+        Lucy Sánchez
+      </a>
+    </h2>
+    <a href="/#store" class="button close">
+      Todos los productos
+    </a>
+  </div>
+  <div class="grid limiter">
+    <div class="left-column">
+      <a target="_blank" class="product-image" href="/img/store/{{ this.page.image }}" target="_blank">
+        <img src="/img/store/{{ this.page.image }}">
+      </a>
+    </div>
+    <div class="center-column">
+      <div class="product-details">
+        <h1 class="product-title">
+          {{ this.page.title }}
+        </h1>
+        <div class="share-toolbar">
+          <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54987b945f0b0154" async="async"></script>
+          <div class="addthis_sharing_toolbox"></div>
+        </div>
+        <div class="product-technique">
+          {{ this.page.technique }}
+        </div>
+        <div class="product-size">
+          {{ this.page.size }}
+        </div>
+        <div class="product-quantity">
+          Edición: {{ this.page.amount }} ejemplares
+        </div>
+        <div class="complementary-info">
+          <h3>Acerca del envío</h3>
+          <ul>
+            <li class="complementary-notice">¡Envíos gratis hasta el 28 de febrero de 2015!</li>
+            <li>El producto se enviará por Correos de Costa Rica.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="right-column form-container">
+      <div class="buy-online">
+        <h3 class="buy-now-title">Comprar en línea con <img class="paypal-logo" src="/img/paypal_logo.gif" alt="Paypal"></h3>
+        <div class="buy-option buy-framed">
+          <div class="price"><span>Enmarcado:</span> ${{ this.page.priceframed }}</div>
+          {{!-- boton de paypal de comprar enmarcado --}}
+          <form method="POST" class="form-buy-paypal" action="http://www.paypal.com/cgi-bin/webscr"> 
+            <input type="hidden" name="cmd" value="_xclick">
+            <input type="hidden" name="business" value="lusanvar28@gmail.com">
+            <input type="hidden" name="sku" value="{{ this.page.skuframed }}">
+            <input type="hidden" name="item_name" value="Ilustracion: {{ this.page.title }}">
+            <input type="hidden" name="amount" value="{{ this.page.priceframed }}">
+            <input type="hidden" name="currency_code" value="USD">
+            <input type="submit" class="submit-buy-paypal" name="submit" value="Comprar con Paypal">
+          </form>
+        </div>
+        <div class="buy-option buy-print">
+          <div class="price price-small"><span>Sin marco:</span> ${{ this.page.price }}</div>
+          {{!-- boton de paypal de comprar sin marco --}}
+          <form method="POST" class="form-buy-paypal" action="http://www.paypal.com/cgi-bin/webscr"> 
+            <input type="hidden" name="cmd" value="_xclick">
+            <input type="hidden" name="business" value="lusanvar28@gmail.com">
+            <input type="hidden" name="sku" value="{{ this.page.sku }}">
+            <input type="hidden" name="item_name" value="Ilustracion: {{ this.page.title }}">
+            <input type="hidden" name="amount" value="{{ this.page.price }}">
+            <input type="hidden" name="currency_code" value="USD">
+            <input type="submit" class="submit-buy-paypal submit-buy-paypal-small" name="submit" value="Comprar con Paypal">
+          </form>
+        </div>
+      </div>
+
+      <div class="buy-deposit">
+        <h3 class="buy-now-title">Comprar con transferencia bancaria (Costa Rica)</h3>
+        <p>Depósito a cuenta bancaria, contra verificación de número de depósito.</p>
+        <h4>Datos de la cuenta:</h4>
+        <p>
+          Banco: Banco de Costa Rica <br>
+          Nombre: Ana Lucía Sánchez Vargas <br>
+          Cédula: 1-1213-0557 <br>
+          Cuenta Banco de Costa Rica, dólares: 001-1638078-9 <br>
+          SINPE: 15202001163807896
+        </p>
+        <p>Puede notificar sobre el detalle del depósito al teléfono 8898-4694 o al email <a href="mailto:hola@lulusanchez.com">hola@lulusanchez.com</a>.</p>
+        <p>¿Tiene algún problema? <a href="mailto:hola@lulusanchez.com">contácteme</a>.</p>
+      </div>
+
+      {{!-- <h2>Formulario de compra</h2> --}}
+
+      {{!-- <p>Complete el formulario y le estaré contactanto en las próximas 24 horas para concertar la compra.</p>
+      <form action="">
+        <div class="form-item">
+          <label for="">Nombre completo</label>
+          <input type="text">
+        </div>
+        <div class="form-item">
+          <label for="">Teléfono</label>
+          <input type="text">
+        </div>
+        <div class="form-item">
+          <label for="">Email</label>
+          <input type="text">
+        </div>
+        <div class="form-item radio-container">
+          <label for="">Tipo</label>
+          <div class="radio">
+            <input type="radio" checked="checked" name="tipo" id="enviar" value="Enviar">
+            <label for="enviar">Enmarcado</label>
+          </div>
+          <div class="radio">
+            <input type="radio" name="tipo" id="recoger" value="Enviar">
+            <label for="recoger">Sin marco</label>
+          </div>
+        </div>
+        <div class="form-item radio-container">
+          <label for="">Opciones de envío</label>
+          <div class="radio">
+            <input type="radio" checked="checked" name="envio" id="recoger" value="Enviar">
+            <label for="recoger">Quiero recoger el producto</label>
+          </div>
+          <div class="radio">
+            <input type="radio" name="envio" id="enviar" value="Enviar">
+            <label for="enviar">Quiero pagar el envío del producto</label>
+          </div>
+        </div>
+        <input type="submit" class="button button-arrow" value="ENVIAR INFORMACIÓN >">
+        <div class="store-contact">¿Tiene algún problema? Contácteme al +506 8898-4694</div>
+      </form> --}}
+      
+    </div>
+  </div>
+</div>
+
+<div class="shipping-info">
+  <div class="limiter">
+    <span class="button close">
+      Volver
+    </span>
+    <h2>Envíos</h2>
+    <div class="shipping-info-box">
+      <h3>Ilustración enmarcada</h3>
+      <p>El envío se realiza a través de Correos de Costa Rica, a todo el país.El producto se protege para mantener su integridad.</p>
+      <span class="shipping-price">
+        $10 
+      </span>
+    </div>
+    <div class="shipping-info-box">
+      <h3>Ilustración sin enmarcar</h3>
+      <p>El envío se realiza a través de Correos de Costa Rica, a todo el país. El producto se envía en un tubo de papel.</p>
+      <span class="shipping-price">
+        $5 
+      </span>
+    </div>
+    <div class="shipping-info-box">
+      <h3>¿Puede recoger el producto?</h3>
+      <p>Si fuera el caso que desee recoger la ilustración, pongase en contacto conmigo para coordinar una cita.</p>
+      <span class="shipping-price">
+        ₡0 
+      </span>
+    </div>
+  </div>
+</div>
+
+{{>footer}}

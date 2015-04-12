@@ -70,8 +70,35 @@ input[type="submit"] {
 	}
 	.csstransitions &:hover {
 		@include breakpoint($desktop) {
-			letter-spacing: 1px;
 			@include single-box-shadow(0, 2px, 3px, 1px, rgba(0,0,0,0.3), null)
 		}
+	}
+}
+
+// form
+input.submit-buy-paypal {
+	@include border-radius(4px);
+	@include font-size(14);
+	display: inline-block;
+	vertical-align: top;
+	padding: 10px 30px;
+	background-color: $submit-paypal-color;
+	border: 0;
+	border-bottom: solid 2px darken($submit-paypal-color, 10%);
+	color: #fff;
+	&:hover {
+		background-color: $submit-paypal-color;
+		border-bottom: solid 2px darken($submit-paypal-color, 20%);
+	}
+}
+input.submit-buy-paypal-small {
+	@include font-size(12);
+	background-color: lighten($submit-paypal-secondary-color, 10%);
+	border-bottom: solid 2px $submit-paypal-secondary-color;
+	padding: 5px 20px;
+	margin-bottom: 0;
+	&:hover {
+		background-color: $submit-paypal-secondary-color;
+		border-bottom: solid 2px darken($submit-paypal-secondary-color, 20%);
 	}
 }

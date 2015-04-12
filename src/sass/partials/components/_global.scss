@@ -48,4 +48,14 @@
 .block-section {
 	padding-top: 40px;
 	padding-bottom: 40px;
+  max-height: none;
+    -webkit-transition: all .5s ease-in-out 0s;
+       -moz-transition: all .5s ease-in-out 0s;
+        -ms-transition: all .5s ease-in-out 0s;
+         -o-transition: all .5s ease-in-out 0s;
+            transition: all .5s ease-in-out 0s;
+}
+
+.hide {
+  display: none;
 }
