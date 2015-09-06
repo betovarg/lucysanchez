@@ -84,13 +84,13 @@ module.exports = function (grunt) {
 
     // watch task
     watch: {
-      // index: {
-      //   files: 'src/index.html',
-      //   tasks: ['htmlmin'],
-      //   options: {
-      //     livereload: true,
-      //   },
-      // },
+      index: {
+        files: 'src/index.html',
+        tasks: ['htmlmin'],
+        options: {
+          livereload: true,
+        },
+      },
       html: {
         files: '**/*.hbs',
         tasks: ['assemble'],
