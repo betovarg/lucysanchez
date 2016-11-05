@@ -77,20 +77,13 @@ module.exports = function (grunt) {
           collapseWhitespace: true
         },
         files: {                                   // Dictionary of files
-          'dist/index.html': 'src/index.html',     // 'destination': 'source'
+          'dist/index.html': 'dist/index-uncompressed.html',     // 'destination': 'source'
         }
       }
     },
 
     // watch task
     watch: {
-      index: {
-        files: 'src/index.html',
-        tasks: ['htmlmin'],
-        options: {
-          livereload: true,
-        },
-      },
       html: {
         files: '**/*.hbs',
         tasks: ['assemble'],
@@ -112,6 +105,13 @@ module.exports = function (grunt) {
           livereload: true,
         },
       },
+      index: {
+        files: 'dist/index-uncompressed.html',
+        tasks: ['htmlmin'],
+        options: {
+          livereload: true,
+        },
+      },
     }
 
   });
@@ -119,9 +119,9 @@ module.exports = function (grunt) {
   /* grunt tasks */
   grunt.registerTask('serve', [
     'assemble',
-    'htmlmin',
     'uglify',
     'connect:server',
+    'htmlmin',
     'watch'
     ]);
 
