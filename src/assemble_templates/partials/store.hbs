@@ -1,0 +1,49 @@
+<a name="store"></a>
+<div class="store block-section">
+  <div class="grid">
+    <div class="store-heading">
+      <h2 class="title">Tienda</h2>
+      <p class="title-paypal">Compra en línea con <img class="paypal-logo" src="/img/paypal_logo.gif" alt="Paypal"></p>
+    </div>
+    <ul>
+      {{#withSort product 'data.weight'}}
+        {{#each this.pages }}
+        <li class="product">
+          <div class="product-image">
+            <a href="/store/{{filename}}">
+              <img src="/img/store/{{ this.data.thumnbail }}">
+            </a>
+          </div>
+          <div class="product-details">
+            <h3 class="product-title">
+              <a href="/store/{{filename}}">{{ this.data.title }}</a>
+            </h3>
+            <div class="product-technique">
+              {{ this.data.technique }}
+            </div>
+            <div class="product-size">
+              {{ this.data.size }}
+            </div>
+            <div class="product-quantity">
+              Edición: {{ this.data.amount }} ejemplares
+            </div>
+            <div class="price">
+              <div class="price-preview"><span>Enmarcado:</span> ${{ this.data.priceframed }}</div>
+              <div class="price-preview price-preview-small"><span>Sin marco:</span> ${{ this.data.price }}</div>
+            </div>
+            <a href="/store/{{filename}}" class="button button-buy">
+              Comprar
+            </a>
+          </div>
+        </li>
+        {{/each}}
+      {{/withSort}}
+    </ul>
+    {{!-- <a href="#" class="button store-button">
+      Ver todos los productos
+    </a> --}}
+    {{!-- <div class="store-information">
+      <p>Los productos actualmente se venden a traves de depósito a cuenta bancaria. Los productos se envían a través de Correos de Costa Rica. <span class="open-shipping">Ver opciones de envío ></span></p>
+    </div> --}}
+  </div>
+</div>

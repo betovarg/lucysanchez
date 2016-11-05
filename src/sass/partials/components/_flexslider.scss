@@ -249,7 +249,7 @@ html[xmlns] .slides  {
 	     background-size: auto;
      }
      &:hover {
-	     background-color: $flexslider-next-accent ;
+	     background-color: $flexslider-next-accent;
 	     width: 50px;
      }
      @include breakpoint($desktop) {

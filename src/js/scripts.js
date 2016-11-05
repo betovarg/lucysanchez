@@ -1,6 +1,3 @@
-//Falta:
-// js para carga condicional de imagenes, que recalcule
-
 // Scroll Anclas
 $(function() {
   $('a[href*=#]:not([href=#])').click(function() {
@@ -47,6 +44,13 @@ $(document).ready(function() {
   });*/
 
   $(window).trigger('resize');
+
+
+  // show - hide the complete gallery
+  $(".show-gal").click(function() {
+    $(".gallery").removeClass("section-collapsed");         //add the class to the clicked element
+    $(".show-gal").addClass("hide");
+  });
 });
 
 
@@ -110,15 +114,6 @@ $(document).ready(function(){
   });
   $(".shipping-info .close").click(function(){
     $(".shipping-info").removeClass("visible-item");
-  });
-
-  $(".button-buy").click(function(){
-    $(".product-full").addClass("visible-item");
-    $(".hide-on-show-product").addClass("hide-element");
-  });
-  $(".product-full .close").click(function(){
-    $(".product-full").removeClass("visible-item");
-    $(".hide-on-show-product").removeClass("hide-element");
   });
 
 });
