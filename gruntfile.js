@@ -82,6 +82,17 @@ module.exports = function (grunt) {
       }
     },
 
+    sass: {
+      options: {
+        sourceMap: true
+      },
+      dist: {
+        files: {
+          './dist/css/style.css': './src/sass/style.scss'
+        }
+      }
+    },
+
     // watch task
     watch: {
       html: {
@@ -97,6 +108,16 @@ module.exports = function (grunt) {
         options: {
           livereload: true,
         },
+      },
+      sass: {
+        options: {
+          sourceMap: true
+        },
+        dist: {
+          files: {
+            './dist/css/style.css': './src/sass/style.scss'
+          }
+        }
       },
       css: {
         files: './dist/css/*',
@@ -121,6 +142,7 @@ module.exports = function (grunt) {
     'assemble',
     'uglify',
     'connect:server',
+    'sass',
     'htmlmin',
     'watch'
     ]);
