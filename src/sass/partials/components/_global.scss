@@ -1,5 +1,5 @@
 // z-index
-.header {
+.main-header {
   z-index: 10;
 }
 .hero-container {
@@ -13,17 +13,18 @@
 }
 
 // #header
-.header {
+.main-header {
   position: fixed;
   left: 0;
   top: 0;
 }
-
+.site-name {
+  
+}
 // titles
 .title {
   text-align: center;
   margin: 0 0 50px;
-  color: #fff;
   font-family: "Montserrat", sans-serif;
   width: 130px;
   margin: 0 auto 50px;

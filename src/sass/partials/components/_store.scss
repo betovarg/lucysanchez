@@ -116,7 +116,7 @@
 .product-image {
 	margin-bottom: 10px;
 	img {
-		@include single-box-shadow(0, 1px, 1px, 1px, rgba(0,0,0,0.15), null);
+		box-shadow: 0 1px 1px 1px rgba(0,0,0,0.15);
 	}
 	@include breakpoint($desktop) {
 		min-height: 235px;
@@ -366,7 +366,7 @@
 }
 .shipping-price {
 	@include font-size(14);
-	@include border-radius(5px);
+	border-radius: 5px;
 	background-color: lighten($store-accent-color, 20%);
 	padding: 5px 10px;
 	color: #fff;
@@ -442,7 +442,7 @@
 			color: #888;
 		}
 		img {
-			@include single-box-shadow(0, 1px, 1px, 1px, rgba(0,0,0,0.3), null);
+			box-shadow: 0 1px 1px 1px rgba(0,0,0,0.3);
 		}
 	}
 	.grid {
@@ -462,7 +462,7 @@
 		  }
 		}
 		float: right;
-		font-family: "Montserrat", Helvetica, sans-serif;
+		font-family: $font-primary;
 		line-height: 1;
 		margin: 10px 0 15px;
 	}

@@ -66,9 +66,9 @@
 // show gallery button
 .show-button {
 	// @include border-radius(7px);
-	@include text-shadow(1px 1px 3px rgba(0,0,0,0.8));
-	@include box-shadow(1px 1px 3px rgba(0,0,0,0.8));
-	@include font-size(13);
+	text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+	box-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+	@include font-size(13); 
 	position: absolute;
 	width: 120px;
 	margin-left: -75px;
