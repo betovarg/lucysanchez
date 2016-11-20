@@ -6,6 +6,9 @@ module.exports = function (grunt) {
   // load assemble
   grunt.loadNpmTasks('assemble');
 
+  // require eyeglass
+  var eyeglass = require("eyeglass");
+
   grunt.initConfig({
     pkg: grunt.file.readJSON('./package.json'),
 
@@ -15,7 +18,6 @@ module.exports = function (grunt) {
           livereload: true,
           port: 4000,
           hostname: '*',
-          // hostname: 'localhost',
           base: './dist/',
           // keepalive: true
         }
@@ -32,17 +34,19 @@ module.exports = function (grunt) {
         }],
         assets: './dist/images',
         // helpers: './src/assemble_templates/helpers/**/*.js',
-        layout: 'page.hbs',
         layoutdir: './src/assemble_templates/layouts/',
         partials: './src/assemble_templates/partials/**/*'
       },
       pages: {
-        // this array looks for content not in pages folder
+        // this array looks for content in store folder
+        options: {
+          layout: 'page.hbs',
+        },
         files: [{
-          cwd: './src/assemble_content/',
-          dest: './dist/',
+          cwd: './src/assemble_content/store/',
+          dest: './dist/store/',
           expand: true,
-          src: ['**/*.hbs', '!_pages/**/*.hbs']
+          src: ['*.hbs', '!_pages/**/*.hbs']
         }, {
           // this array looks for content in pages
           cwd: './src/assemble_content/_pages/',
@@ -50,6 +54,15 @@ module.exports = function (grunt) {
           expand: true,
           src: '**/*.hbs'
         }]
+      },
+      styleguide: {
+        options: {
+          layout: 'styleguide-layout.hbs',
+        },
+        cwd: './src/assemble_content/styleguide/',
+        dest: './dist/',
+        expand: true,
+        src: 'styleguide.hbs',
       }
     },
 
@@ -83,13 +96,28 @@ module.exports = function (grunt) {
     },
 
     sass: {
-      options: {
+      files: ['./src/sass/*.scss', './src/sass/**/*.scss'],
+      options: require("eyeglass")({
         sourceMap: true
-      },
+      }),
       dist: {
         files: {
           './dist/css/style.css': './src/sass/style.scss'
         }
+      }
+    },
+
+    postcss: {
+      files: './dist/css/*.css',
+      options: {
+        map: true,
+        processors: [
+          require('autoprefixer')({browsers: ['last 2 version']})
+        ]
+      },
+      dist: {
+        src: './dist/css/style.css',
+        dest: './dist/css/style.css'
       }
     },
 
@@ -110,6 +138,8 @@ module.exports = function (grunt) {
         },
       },
       sass: {
+        files: ['<%= sass.files %>'],
+        tasks: ['sass'],
         options: {
           sourceMap: true
         },
@@ -121,7 +151,7 @@ module.exports = function (grunt) {
       },
       css: {
         files: './dist/css/*',
-        tasks: ['assemble'],
+        tasks: ['postcss'],
         options: {
           livereload: true,
         },
