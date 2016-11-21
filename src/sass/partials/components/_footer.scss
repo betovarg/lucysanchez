@@ -1,0 +1,73 @@
+.contact {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-top: solid 1px #BDBDBD;
+  padding: 35px 20px;
+  @include breakpoint($tablet) {
+    flex-direction: row;
+  }
+}
+.contact-left {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  @include breakpoint($tablet) {
+    flex-direction: row;
+    padding-right: 40px;
+  }
+  strong {
+    color: #000;
+  }
+}
+.contact-right {
+  @include font-size(14);
+  @include breakpoint($tablet) {
+    border-left: solid 1px #bdbdbd;
+    padding-left: 40px;
+  }
+  a {
+    color: #000;
+    font-weight: bold;
+  }
+}
+.contact-intro {
+  text-align: center;
+  @include breakpoint($tablet) {
+    text-align: left;
+    margin-right: 20px;
+  }
+}
+.social-menu-container {
+  display: inline-block;
+  margin: 0 0 10px;
+  padding: 0;
+  @include breakpoint($tablet) {
+    margin: 0;
+  }
+}
+.social-menu-item {
+  @extend %reset-list;
+  display: inline-block;
+  padding: 0 5px;
+}
+.social-item {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  text-indent: 100%;
+  overflow: hidden;
+  background-image: url(../img/sprite.png);
+  .svg & {
+    background-image: url(../img/sprite.svg);
+  }
+  background-repeat: no-repeat;
+  background-color: #2B333F;
+  border-radius: 100%;
+}
+.insta {
+  background-position: center -242px;
+}
+.tw {
+  background-position: center -302px;
+}
