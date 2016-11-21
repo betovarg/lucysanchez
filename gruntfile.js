@@ -116,19 +116,19 @@ module.exports = function (grunt) {
       }
     },
 
-    // postcss: {
-    //   files: './dist/css/*.css',
-    //   options: {
-    //     map: true,
-    //     processors: [
-    //       require('autoprefixer')({browsers: ['last 2 version']})
-    //     ]
-    //   },
-    //   dist: {
-    //     src: './dist/css/style.css',
-    //     dest: './dist/css/style.css'
-    //   }
-    // },
+    postcss: {
+      files: './dist/css/*.css',
+      options: {
+        map: true,
+        processors: [
+          require('autoprefixer')({browsers: ['last 2 version']})
+        ]
+      },
+      dist: {
+        src: './dist/css/style.css',
+        dest: './dist/css/style.css'
+      }
+    },
 
     // watch task
     watch: {
@@ -148,7 +148,7 @@ module.exports = function (grunt) {
       },
       sass: {
         files: ['<%= sass.files %>'],
-        tasks: ['sass'],
+        tasks: ['sass', 'postcss'],
         options: {
           sourceMap: true
         },
@@ -160,7 +160,6 @@ module.exports = function (grunt) {
       },
       css: {
         files: './dist/css/*',
-        // tasks: ['postcss'],
         options: {
           livereload: true,
         },
@@ -182,6 +181,7 @@ module.exports = function (grunt) {
     'uglify',
     'connect:server',
     'sass',
+    'postcss',
     'htmlmin',
     'watch'
     ]);
