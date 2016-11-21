@@ -14,79 +14,6 @@ $(function() {
   });
 })
 
-$(document).ready(function() {
-
-  //executes flexslider
-  $('.flexslider').flexslider({
-    animation: "slide",
-    slideshowSpeed: 4000,
-    animationSpeed: 1000,
-    useCSS: true, 
-    touch: true,
-    pauseOnAction: true,
-    controlNav: false,
-    easing: 'easeInOutCubic',
-  });
-
-	//hero container to window height
-	//https://j.eremy.net/set-element-height-to-viewport/
-  function setHeight() {
-    windowHeight = $(window).innerHeight();
-    $('.hero-container').css('height', windowHeight);
-  };
-  
-  setHeight();
-  $('.flexslider').resize();
-  // $('.slide-image').resizeToParent();
-
-  /*$(window).resize(function() {
-    setHeight();
-  });*/
-
-  $(window).trigger('resize');
-
-
-  // show - hide the complete gallery
-  $(".show-gal").click(function() {
-    $(".gallery").removeClass("section-collapsed");         //add the class to the clicked element
-    $(".show-gal").addClass("hide");
-  });
-});
-
-
-// hides slideshow next button on click
-$(function() {                       					//run when the DOM is ready
-  $(".slides-go-down a").click(function() {  	//use a class, since your ID gets mangled
-    $(".flex-next").addClass("hide");      		//add the class to the clicked element
-  });
-});
-
-// back to top
-$(document).scroll(function () {
-    //Show element after user scrolls 800px
-    var y = $(this).scrollTop();
-    if (y > 500) {
-        $('.back-to-top').addClass("visible");
-    } else {
-        $('.back-to-top').removeClass("visible");
-    }
-    if (y > 500) {
-			$('.flexslider').flexslider("pause");
-    //else {
-    //  $('.flexslider').flexslider("play");
-    }
-		if (y < 1) {
-			$(".flex-next").removeClass("hide");
-		}
-});
-
-// on window resize... do this... 
-$(window).on('resize', function() {
-  //cover style images in slides
-  //https://github.com/levymetal/jquery-resize-image-to-parent
-  $('.slide-image').resizeToParent();
-}).trigger('resize'); /// ( but also... trigger that event once... right when page loads.)
-
 //Lightbox added to desktop, no lilghtbox on mobile
 var lightboxOnResize = function lightboxOnResize() {
     if ($(window).width() > 599) {
@@ -99,11 +26,42 @@ var lightboxOnResize = function lightboxOnResize() {
 $(document).ready(lightboxOnResize);
 $(window).resize(lightboxOnResize);
 
+$(document).ready(function() {
+  // show - hide the complete gallery
+  $(".show-gal").click(function() {
+    $(".gallery-section-aligner").removeClass("section-collapsed");         //add the class to the clicked element
+    $(".show-gal").addClass("hide");
+  });
+  // show - hide the complete store
+  $(".show-store").click(function() {
+    $(".store-section-aligner").removeClass("section-collapsed");         //add the class to the clicked element
+    $(".show-store").addClass("hide");
+  });
+  // show bank accounts popup
+  $(".open-bank-account").click(function() {
+    $(".bank-accounts-popup").removeClass("hide");         //add the class to the clicked element
+  });
+  // hide bank accounts popup
+  $(".bank-accounts-close").click(function() {
+    $(".bank-accounts-popup").addClass("hide");         //add the class to the clicked element
+  });
+});
+
 // waypoints
 $(function() {
   $('.store').waypoint(function() {
     $(this).addClass("block-active");
   }, { offset: '70%' });
+  // $('.epitafio-nav').waypoint(function(direction) {
+  //   if (direction === 'down') {
+  //     $(this).addClass("nav-sticky");
+  //     $('.epitafio-columns-container').addClass("nav-sticky-margin");
+  //   }
+  //   else {
+  //     $(this).removeClass("nav-sticky");
+  //     $('.epitafio-columns-container').removeClass("nav-sticky-margin");
+  //   }
+  // }, { offset: '0' });
 });
 
 //products
