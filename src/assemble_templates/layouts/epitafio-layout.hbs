@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html  class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lucy Sánchez | Styleguide</title>
+  <link rel="stylesheet" href="/css/style.css">
+  {{>header-html}}
+</head>
+<body>
+  {{>header}}
+  <div class="epitafio-intro grid">
+    <div class="epitafio-intro-image epitafio-intro-first-image">
+      <img src="img/epitafio-intro-1.jpg" alt="">
+    </div>
+    <div class="epitafio-intro-image epitafio-second-first-image">
+      <img src="img/epitafio-intro-2.jpg" alt="">
+    </div>
+  </div>
+  <nav class="epitafio-nav">
+    <div class="grid">
+      <ul class="epitafio-nav-container">
+        <li class="epitafio-nav-item"><a href="#story" class="epitafio-nav-link">La historia</a></li>
+        <li class="epitafio-nav-item"><a href="#petroneo" class="epitafio-nav-link">Quén fue Petróneo</a></li>
+        <li class="epitafio-nav-item"><a href="#buy" class="epitafio-nav-link button-filled-highlighted">Comprar en línea</a></li>
+        <li class="epitafio-nav-item"><a href="#bio" class="epitafio-nav-link">Sobre la autora</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="epitafio-columns-container grid">
+    <div class="epitafio-column epitafio-historia">
+    <a name="story"></a>
+      <h2 class="sub-heading">La Historia</h2>
+      <p><strong>"Epitafio de una Cazadora"</strong> es una fábula originalmente escrita por petróneo en el siglo V. El estilo blablabla adipiscing elit adipiscing elit.</p>
+      <p> </p>
+      <p>El texto de este álbum ilustrado fue adaptado por la autora, con el objetivo de blablabla Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
+      <p> </p>
+      <p>Esta fábula cuenta la historia de lsdkjlkj lkjsd, donde se toca el tema de la muerte pero se celebra la vida</p>
+    </div>
+    <div class="epitafio-column apitafio-petroneo">
+    <a name="petroneo"></a>
+      <h2 class="sub-heading">Quién fue Petróneo</h2>
+      <p><strong>Petróneo</strong> fue blablabla adipiscing elit adipiscing elit.</p>
+      <p> </p>
+      <p>El texto de este álbum ilustrado fue adaptado por la autora, con el objetivo de blablabla Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
+      <p> </p>
+      <p>Esta fábula cuenta la historia de lsdkjlkj lkjsd, donde se toca el tema de la muerte pero se celebra la vida</p>
+    </div>
+  </div>
+  <a name="buy"></a>
+  <div class="epitafio-comprar grid">
+    <h2 class="sub-heading">Comprar en línea</h2>
+    <article class="epitafio-product">
+      <div class="product-column product-cover">
+        <img src="img/store/book-cover.jpg" alt="Porada del libro Epitafio de una cazadora">
+      </div>
+      <div class="product-column product-pricing">
+        <h2>Autora e ilustradora: Lucy Sánchez <br>
+            Colección: Colibrí Editorial: Editorial Costa Rica</h2>
+        <p>ISBN 9789930519073 <br>
+        Año 2015 <br>
+        28 páginas, <br>
+        1a edición <br>
+        105 gramos, 21cm x 21cm</p>
+        <div class="epitafio-product-price">Precio USD$15 *</div>
+        <p class="epitafio-roduct-shipping-local">*Incluye transporte a todo el territorio costarricense.</p>
+        <p class="epitafio-roduct-shipping-intl">INTERNACIONAL: Tramitar compra directamente con la <a href="https://www.editorialcostarica.com/catalogo.cfm?detalle=1944" target="_blank">Editorial Costa Rica.</a></p>
+        <p>¿Tiene algún problema? <a href="mailto:hola@lulusanchez.com">contácteme</a>.</p>
+      </div>
+      <div class="product-column product-ctas">
+        <h3>¿Cómo Comprar?</h3>
+        {{!-- <a href="#" class="button-filled-highlighted">Comprar con Paypal</a> --}}
+        <form method="POST" class="form-buy-paypal" action="http://www.paypal.com/cgi-bin/webscr"> 
+          <input type="hidden" name="cmd" value="_xclick">
+          <input type="hidden" name="business" value="lusanvar28@gmail.com">
+          <input type="hidden" name="sku" value="epitafio">
+          <input type="hidden" name="item_name" value="Epitafio de una cazadora">
+          <input type="hidden" name="amount" value="15">
+          <input type="hidden" name="currency_code" value="USD">
+          <input type="submit" class="button-filled-highlighted" name="submit" value="Comprar con Paypal">
+        </form>
+        <a href="#" class="button open-bank-account">Depósito Bancario</a>
+        <a href="https://www.editorialcostarica.com/catalogo.cfm?detalle=1944" target="_blank" class="button">A través de la EditorialCR</a>
+      </div>
+    </article>
+    <div class="bank-accounts-popup hide">
+      <div class="bank-accounts-info">
+        <div class="bank-accounts-close">Cerrar</div>
+        <div class="buy-deposit">
+        <h3 class="buy-now-title">Comprar con transferencia bancaria (Costa Rica)</h3>
+        <p>Depósito a cuenta bancaria, contra verificación de número de depósito.</p>
+        <h4>Datos de la cuenta:</h4>
+        <p>
+          Banco: Banco de Costa Rica <br>
+          Nombre: Ana Lucía Sánchez Vargas <br>
+          Cédula: 1-1213-0557 <br>
+          Cuenta Banco de Costa Rica, dólares: 001-1638078-9 <br>
+          SINPE: 15202001163807896
+        </p>
+        <p>Puede notificar sobre el detalle del depósito al teléfono 8898-4694 o al email <a href="mailto:hola@lulusanchez.com">hola@lulusanchez.com</a>.</p>
+        <p>¿Tiene algún problema? <strong><a href="mailto:hola@lulusanchez.com">contácteme</a></strong>.</p>
+      </div>
+      </div>
+    </div>
+  </div>
+  {{>bio}}
+  {{>footer}}
+</body>
