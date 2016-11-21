@@ -1,15 +1,47 @@
 .button {
-	border-radius: 7px;
-	@include font-size(15);
-	line-height: 1.5;
-	display: inline-block;
-	background-color: #555;
+	@include font-size(14);
+	border: solid 3px #000;
+  background-color: #fff;
+  cursor: pointer;
+  line-height: 1.5;
+	display: block;
 	padding: 10px 20px;
-	color: #fff;
-	font-family: "Montserrat";
-	font-weight: normal;
-  border: 0;
+  margin-bottom: 20px;
+	color: #000;
+	font-weight: bold;
+  text-transform: uppercase;
   outline: 0;
+  @include breakpoint($tablet) {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+  @include breakpoint($desktop) {
+    &:hover {
+      background-color: #e1e1e1;
+    }
+  }
+}
+.button-filled {
+  @extend .button;
+  background: $light-pink;
+  color: #4f4f4f;
+  border-color: #EE9191;
+  @include breakpoint($desktop) {
+    &:hover {
+      background-color: darken($light-pink,10);
+    }
+  }
+}
+.button-filled-highlighted {
+  @extend .button;
+  background-color: $pink;
+  color: #fff;
+  border: 0;
+  @include breakpoint($desktop) {
+    &:hover {
+      background-color: darken($pink,10);
+    }
+  }
 }
 .button-arrow {
   &:after {
@@ -23,5 +55,13 @@
     border-style: solid;
     border-width: 6px 0 6px 4px;
     border-color: transparent transparent transparent #fff;
+  }
+}
+.button-inline {
+  @include breakpoint($tablet) {
+    margin-right: 40px;
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
