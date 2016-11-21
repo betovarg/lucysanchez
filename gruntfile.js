@@ -12,15 +12,19 @@ module.exports = function (grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('./package.json'),
 
-    connect: {
-      server: {
-        options: {
-          livereload: true,
-          port: 4000,
-          hostname: '*',
-          base: './dist/',
-          // keepalive: true
-        }
+    browserSync: {
+      bsFiles: {
+        src : [
+          './dist/css/*.css',
+          './dist/**/*.html',
+          './dist/**/*.js'
+        ]
+      },
+      options: {
+          watchTask: true,
+          server: './dist/',
+          open: false,
+          port: 4000
       }
     },
 
@@ -80,10 +84,10 @@ module.exports = function (grunt) {
       js: {
         files: {
           'dist/js/app.js': [
-            'src/js/jquery.flexslider-min.js', 
-            'src/js/jquery.resizeimagetoparent.min.js', 
-            'src/js/lightbox.min.js', 
-            'src/js/picturefill.min.js', 
+            'src/js/jquery.flexslider-min.js',
+            'src/js/jquery.resizeimagetoparent.min.js',
+            'src/js/lightbox.min.js',
+            'src/js/picturefill.min.js',
             'src/js/scripts.js',
             'src/js/waypoints.min.js'
             ]
@@ -135,16 +139,10 @@ module.exports = function (grunt) {
       html: {
         files: '**/*.hbs',
         tasks: ['assemble'],
-        options: {
-          livereload: true,
-        },
       },
       js: {
         files: 'src/js/*',
         tasks: ['uglify'],
-        options: {
-          livereload: true,
-        },
       },
       sass: {
         files: ['<%= sass.files %>'],
@@ -160,16 +158,10 @@ module.exports = function (grunt) {
       },
       css: {
         files: './dist/css/*',
-        options: {
-          livereload: true,
-        },
       },
       index: {
         files: 'dist/index-uncompressed.html',
         tasks: ['htmlmin'],
-        options: {
-          livereload: true,
-        },
       },
     }
 
@@ -179,7 +171,7 @@ module.exports = function (grunt) {
   grunt.registerTask('serve', [
     'assemble',
     'uglify',
-    'connect:server',
+    'browserSync',
     'sass',
     'postcss',
     'htmlmin',
