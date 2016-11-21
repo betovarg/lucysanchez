@@ -63,6 +63,15 @@ module.exports = function (grunt) {
         dest: './dist/',
         expand: true,
         src: 'styleguide.hbs',
+      },
+      epitafio: {
+        options: {
+          layout: 'epitafio-layout.hbs',
+        },
+        cwd: './src/assemble_content/epitafio/',
+        dest: './dist/',
+        expand: true,
+        src: 'epitafio.hbs',
       }
     },
 
@@ -107,19 +116,19 @@ module.exports = function (grunt) {
       }
     },
 
-    postcss: {
-      files: './dist/css/*.css',
-      options: {
-        map: true,
-        processors: [
-          require('autoprefixer')({browsers: ['last 2 version']})
-        ]
-      },
-      dist: {
-        src: './dist/css/style.css',
-        dest: './dist/css/style.css'
-      }
-    },
+    // postcss: {
+    //   files: './dist/css/*.css',
+    //   options: {
+    //     map: true,
+    //     processors: [
+    //       require('autoprefixer')({browsers: ['last 2 version']})
+    //     ]
+    //   },
+    //   dist: {
+    //     src: './dist/css/style.css',
+    //     dest: './dist/css/style.css'
+    //   }
+    // },
 
     // watch task
     watch: {
@@ -151,7 +160,7 @@ module.exports = function (grunt) {
       },
       css: {
         files: './dist/css/*',
-        tasks: ['postcss'],
+        // tasks: ['postcss'],
         options: {
           livereload: true,
         },
