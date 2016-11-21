@@ -1,23 +1,28 @@
 .bio {
-	padding: 0;
-	background: lighten($body-bg-color, 5%);
-	border-bottom: solid 3px #81f8e2;
-	.grid {
-		overflow: hidden;
-		padding: 40px 0;
-	}
+  .content-limiter {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    @include breakpoint($tablet) {
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+  }
+  a {
+    color: #000;
+    font-weight: bold;
+  }
 	.content-limiter {
-		padding: 20px;
-		margin: 0 auto;
-		@include breakpoint($desktop) {
+		@include breakpoint($tablet) {
 			width: 60%;
 			padding: 0;	
 		}
 	}
 }
-.bio p {
-	font-size: 15px;
-	a {
-		color: #0CF;
-	}
+.bio-image {
+  max-width: 140px;
+  margin-bottom: 20px;
+  @include breakpoint($tablet) {
+    margin-right: 40px;
+  }
 }
