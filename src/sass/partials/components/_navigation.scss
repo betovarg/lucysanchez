@@ -128,6 +128,7 @@
   }
 }
 .epitafio-nav-link {
+  color: #4f4f4f;
   margin-bottom: 5px;
   display: inline-block;
   @include font-size(12);
@@ -136,6 +137,9 @@
     padding: 0 19px;
     margin-bottom: 0;
     @include font-size(15);
+  }
+  &.button-filled-highlighted {
+    color: #fff;
   }
 }
 
