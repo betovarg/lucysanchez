@@ -80,7 +80,7 @@ a, a.active {
   text-decoration: none; }
 
 a {
-  color: #4f4f4f; }
+  color: #2F80ED; }
 
 a:hover {
   text-decoration: none; }
@@ -248,12 +248,6 @@ tr.even, tr.odd {
   border-width: 6px 0 6px 4px;
   border-color: transparent transparent transparent #fff; }
 
-@media (min-width: 680px) {
-  .button-inline {
-    margin-right: 40px; }
-    .button-inline:last-child {
-      margin-right: 0; } }
-
 input[type="text"],
 input[type="email"] {
   display: block;
@@ -377,6 +371,16 @@ input.submit-buy-paypal-small {
   .hero-intro-right {
     -ms-flex-order: 2;
         order: 2; } }
+
+@media (min-width: 680px) {
+  .hero-intro-actions .button-inline {
+    margin-right: 20px; }
+    .hero-intro-actions .button-inline:last-child {
+      margin-right: 0; } }
+
+@media (max-width: 914px) {
+  .hero-intro-actions .button-inline:first-child {
+    margin-bottom: 20px; } }
 
 .epitafio-intro {
   display: -ms-flexbox;
@@ -715,6 +719,7 @@ input.submit-buy-paypal-small {
         margin-left: 20px; } }
 
 .epitafio-nav-link {
+  color: #4f4f4f;
   margin-bottom: 5px;
   display: inline-block;
   font-size: 12px;
@@ -726,6 +731,8 @@ input.submit-buy-paypal-small {
       margin-bottom: 0;
       font-size: 15px;
       font-size: 1.5rem; } }
+  .epitafio-nav-link.button-filled-highlighted {
+    color: #fff; }
 
 .nav-sticky {
   position: fixed;
@@ -1425,9 +1432,6 @@ input.submit-buy-paypal-small {
             flex-direction: row;
         -ms-flex-pack: start;
             justify-content: flex-start; } }
-  .bio a {
-    color: #000;
-    font-weight: bold; }
   @media (min-width: 800px) {
     .bio .content-limiter {
       width: 70%;
@@ -1517,4 +1521,7 @@ input.submit-buy-paypal-small {
 
 .tw {
   background-position: center -302px; }
+
+.ml {
+  color: #4f4f4f; }
 /*# sourceMappingURL=style.css.map */
