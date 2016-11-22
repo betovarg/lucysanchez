@@ -57,11 +57,3 @@
     border-color: transparent transparent transparent #fff;
   }
 }
-.button-inline {
-  @include breakpoint($tablet) {
-    margin-right: 40px;
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-}
