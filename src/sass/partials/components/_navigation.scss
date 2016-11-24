@@ -1,6 +1,7 @@
 .site-name {
   max-width: 120px;
   margin-bottom: 10px;
+  overflow: hidden;
   @include breakpoint($tablet) {
     max-width: 180px;
     margin-bottom: 0;
@@ -11,7 +12,7 @@
   flex-wrap: wrap;
   flex-direction: column;
   padding-top: 20px;
-  @include breakpoint($tablet) {
+  @include breakpoint(725px) {
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
@@ -28,7 +29,7 @@
   display: flex;
   flex-direction: column;
   align-content: flex-start;
-  @include breakpoint($tablet) {
+  @include breakpoint(725px) {
     flex-direction: row;
   }
 }
@@ -51,7 +52,7 @@
   text-transform: uppercase;
   font-weight: 500;
   color: #4f4f4f;
-  @include breakpoint($tablet) {
+  @include breakpoint(725px) {
     padding: 0 8px;
   }
   @include breakpoint(880px) {
