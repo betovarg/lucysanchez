@@ -2,24 +2,11 @@
 // Configuration Variables
 //
 
-// Breakpoints will generate
-// standard media queries
-$breakpoint-no-queries: false;
-$breakpoint-no-query-fallbacks: false;
-
 //
 // Base imports
 //
-@import "singularitygs";
-@import "breakpoint";
-@import "compass/css3/images";
-@import "compass/css3/transition";
-@import "compass/css3/box-sizing";
-@import "compass/css3/border-radius";
-@import "compass/css3/box-shadow";
-@import "compass/css3/text-shadow";
-@import "compass/css3/opacity";
-
+@import 'breakpoint';
+@import 'singularitygs';
 
 //
 // Google Fonts
@@ -35,5 +22,14 @@ $breakpoint-no-query-fallbacks: false;
 @import "partials/base";
 @import "partials/layout";
 @import "partials/placeholders";
-@import "partials/components/*";
-@import "partials/pages/*";
+@import "partials/components/_global.scss";
+@import "partials/components/_buttons.scss";
+@import "partials/components/_forms.scss";
+@import "partials/components/_hero-intro.scss";
+@import "partials/components/_gallery.scss";
+@import "partials/components/_lightbox.scss";
+@import "partials/components/_navigation.scss";
+@import "partials/components/_store.scss";
+@import "partials/pages/_frontpage.scss";
+@import "partials/pages/_bio.scss";
+@import "partials/components/_footer.scss";

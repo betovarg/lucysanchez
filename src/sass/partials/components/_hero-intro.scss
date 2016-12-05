@@ -1,0 +1,62 @@
+.hero-intro {
+  display: flex;
+  flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 100%;
+  @include breakpoint(769px) {
+    flex-direction: row;
+  }
+}
+.hero-intro-section {
+  background-color: #F4F4F4;
+  @include breakpoint(769px) {
+    width: 50%;
+  }
+}
+.hero-intro-summary {
+  margin-bottom: 40px;
+}
+.hero-intro-left {
+  padding: 20px;
+  @include breakpoint(769px) {
+    padding: 40px;
+    order: 1;
+  }
+}
+.hero-intro-right {
+  @include breakpoint(769px) {
+    order: 2;
+  }
+}
+.hero-intro-actions {
+  .button-inline {
+    @include breakpoint($tablet) {
+      margin-right: 20px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    @include breakpoint(max-width 914px) {
+      &:first-child {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+// epitafio intro
+.epitafio-intro {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3px;
+  @include breakpoint($tablet) {
+    margin-bottom: 10px;
+  }
+}
+.epitafio-intro-image {
+  width: 49.8%;
+}

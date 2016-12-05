@@ -1,78 +1,66 @@
-.header h1 {
-	@include breakpoint($tablet) {
-    position: relative;
-    max-width: 300px;
-    font-size: 60px;
-    padding: 0 40px;
-    margin-top: 100px;  
-    margin-bottom: 40px;
+.site-name {
+  max-width: 120px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  @include breakpoint($tablet) {
+    max-width: 180px;
+    margin-bottom: 0;
   }
-  @include single-text-shadow(0, 0, 10px, 2px, rgba(0,0,0,.3));
-  font-family: "Montserrat", Helvetica, sans-serif;
-	font-weight: 400;
-	line-height: 1;
-	padding: 20px;
-	font-size: 40px;
-	margin-bottom: 20px;
-	position: fixed;
-	top: 15%;
-  a {
-    color: #fff;
-    &:visited {
-      color: #fff;
+}
+.main-header {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding-top: 20px;
+  @include breakpoint(725px) {
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 35px 20px;
+  }
+}
+.main-nav {
+  margin-bottom: 10px;
+  @include breakpoint($tablet) {
+    margin-bottom: 0;
+  }
+}
+.main-nav-list-container {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  @include breakpoint(725px) {
+    flex-direction: row;
+  }
+}
+.main-nav-list-item {
+  list-style-type: none;
+  &:last-child {
+    .main-nav-link {
+      padding-right: 0;
+    }
+  }
+  &:first-child {
+    .main-nav-link {
+      padding-left: 0;
     }
   }
 }
-
-.main-nav {
-	padding-left: 20px;
-	position: fixed;
-	top: 33%;
-	@include breakpoint($tablet){
-		padding-left: 40px;	
-		position: relative;
-		top: auto;
-	}
-  ul {
-    padding: 23px 0px;
-    border: solid 1px #fff;
-    border-left: 0;
-    border-right: 0;
-    @include breakpoint(0 410px) {
-      width: 150px;
-      padding: 10px 0;
-      li {
-        width: 100%;
-        a {
-          display: inline-block;
-          padding: 3px 0;
-        }
-      }
-    }
-    @include breakpoint($tablet){
-	  	padding: 8px 0px;
-    }
+.main-nav-link {
+  @include font-size(12);
+  display: block;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #4f4f4f;
+  @include breakpoint(725px) {
+    padding: 0 8px;
   }
-  li {
-    list-style-type: none;
-    display: inline-block;
-    padding: 0 5px;
-    font-family: "Lato";
-    @include breakpoint($tablet) {
-	  	padding: 0 10px;  
-    }
-    .menu-store {
-      font-weight: 700;
-      color: #FFF200;
-    }
-    a {
-      color: #fff;
-      text-transform: uppercase;
-      @include single-text-shadow(0, 0, 7px, 2px, rgba(0,0,0,1));
-      @include breakpoint(0 372px) {
-        font-size: 18px;
-      }
-    }
+  @include breakpoint(880px) {
+    padding: 0 19px;
+  }
+  &:hover {
+    color: #000;
+    font-weight: bold;
   }
 }
 
@@ -92,7 +80,7 @@
   height: 150px;
   line-height: 400px;
   overflow: hidden;
-  @include border-radius(100%);
+  border-radius: 100%;
   visibility: hidden;
   opacity: 0;
   z-index: 12;
@@ -106,5 +94,66 @@
     display: block;
     visibility: visible;
     opacity: 1;
+  }
+}
+
+// epitafio nav
+.epitafio-nav-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+  background: #f2f2f2;
+  padding: 10px;
+  margin: 0;
+  @include breakpoint($tablet) {
+    justify-content: flex-start;
+    padding: 20px 10px;
+  }
+}
+.epitafio-nav-item {
+  @extend %reset-list;
+  width: 48%;
+  text-align: left;
+  @include breakpoint($tablet) {
+    width: auto;
+  }
+  .button-filled-highlighted {
+    text-transform: none;
+    font-weight: 300;
+    @include breakpoint($tablet) {
+      padding: 10px 20px;
+      margin-left: 20px;
+    }
+  }
+}
+.epitafio-nav-link {
+  color: #4f4f4f;
+  margin-bottom: 5px;
+  display: inline-block;
+  @include font-size(12);
+  padding: 0 5px;
+  @include breakpoint($tablet) {
+    padding: 0 19px;
+    margin-bottom: 0;
+    @include font-size(15);
+  }
+  &.button-filled-highlighted {
+    color: #fff;
+  }
+}
+
+.nav-sticky {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.nav-sticky-margin {
+  padding-top: 76px;
+  @include breakpoint($tablet) {
+    padding-top: 82px;
   }
 }
