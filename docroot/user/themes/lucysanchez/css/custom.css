@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #footer {
   background: transparent;
   position: relative;
@@ -89,10 +90,13 @@
 .ml, .ml:hover {
   color: #4f4f4f !important; }
 
+=======
+>>>>>>> 1512226a6ac0681a21a40bdb61706517096c27cc
 html {
   font-size: 62.5%;
   line-height: 1.4em; }
 
+<<<<<<< HEAD
 #header #logo h3 a {
   display: block;
   background: url("../images/signature.png") no-repeat center;
@@ -100,6 +104,13 @@ html {
   height: 60px;
   width: 150px;
   text-indent: 11998px; }
+=======
+header#header, section#body, footer#footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px; }
+>>>>>>> 1512226a6ac0681a21a40bdb61706517096c27cc
 
 .header {
   z-index: 10; }
@@ -116,6 +127,7 @@ html {
 html, body, button, input, select, textarea, .pure-g, .pure-g [class*="pure-u"] {
   font-family: "Work Sans", Helvetica, sans-serif; }
 
+<<<<<<< HEAD
 header#header, section#body, footer#footer {
   max-width: 1200px;
   margin: 0 auto;
@@ -133,6 +145,12 @@ header#header {
   font-size: 14px;
   font-size: 1.4em;
   padding-top: 8rem;
+=======
+#body {
+  font-size: 14px;
+  font-size: 1.4em;
+  padding-top: 14rem;
+>>>>>>> 1512226a6ac0681a21a40bdb61706517096c27cc
   padding-bottom: 11rem;
   color: #4f4f4f;
   margin: 0;
@@ -187,3 +205,46 @@ p {
 
 .hide {
   display: none; }
+<<<<<<< HEAD
+=======
+
+header#header {
+  left: 50%;
+  margin-left: -600px;
+  padding: 35px 20px;
+  display: table; }
+
+header#header,
+#header.scrolled {
+  box-shadow: none !important; }
+
+header#header #logo h3 a {
+  background: url("../images/signature.png") no-repeat center;
+  background-size: 100%;
+  display: block;
+  text-indent: -11988px;
+  height: 60px;
+  width: 150px; }
+
+.navigation li a {
+  font-size: 12px;
+  font-size: 1.2rem;
+  display: block;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #4f4f4f; }
+  .navigation li a:hover {
+    color: #000;
+    font-weight: bold; }
+
+.navigation li:first-child {
+  display: none; }
+
+#header #navbar ul.navigation li a:before,
+#header #navbar ul.navigation li a:after {
+  display: none; }
+
+#header.scrolled #navbar a,
+#header.scrolled #navbar a:hover {
+  color: #000 !important; }
+>>>>>>> 1512226a6ac0681a21a40bdb61706517096c27cc
