@@ -31,7 +31,7 @@
     {% block javascripts %}
         {% do assets.addJs('jquery', 101) %}
         {% do assets.addJs('theme://js/modernizr.custom.71422.js', 100) %}
-        {% do assets.addJs('theme://js/antimatter.js') %}
+        {% do assets.addJs('theme://js/lucysanchez.js') %}
         {% do assets.addJs('theme://js/slidebars.min.js') %}
     {% endblock %}
     {{ assets.js() }}
@@ -68,32 +68,28 @@
 
         {% block footer %}
         <footer id="footer">
-            <div class="totop">
-                <span><a href="#" id="toTop"><i class="fa fa-arrow-up"></i></a></span>
+          <div class="totop">
+              <span><a href="#" id="toTop"><i class="fa fa-arrow-up"></i></a></span>
+          </div>
+          <section class="contact block-section">
+            <div class="contact-left">
+              <p class="contact-intro">
+                <strong>Estemos en contacto:</strong> <a class="ml" href="mailto:hola@lulusanchez.com">hola@lulusanchez.com</a>
+              </p>
+              <nav class="social-menu">
+                <ul class="social-menu-container">
+                  <li class="social-menu-item"><a class="social-item tw" target="_blank" href="http://www.twitter.com/lusanvar">Twitter</a></li>
+                  <li class="social-menu-item"><a class="social-item insta" target="_blank" href="https://www.instagram.com/lucyilustra">Facebook</a></li>
+                </ul>
+              </nav>
             </div>
-            <p><a href="http://getgrav.org">Grav</a> was <i class="fa fa-code"></i> with <i class="fa fa-heart"></i> by <a href="http://www.rockettheme.com">RocketTheme</a>.</p>
+            <div class="contact-right">
+              <a href="tel:+50688984694" class="tel">Tel: +506 8898-4694</a>
+              <div class="country">San José, Costa Rica</div>
+            </div>
+          </section>
         </footer>
         {% endblock %}
     </div>
-    {% block sidebar_navigation %}
-        <div class="sb-slidebar sb-left sb-width-thin">
-            <div id="panel">
-            {% include 'partials/navigation.html.twig' %}
-            </div>
-        </div>
-    {% endblock %}
-    {% block bottom %}
-        {{ assets.js('bottom') }}
-        <script>
-        $(function () {
-            $(document).ready(function() {
-              $.slidebars({
-                hideControlClasses: true,
-                scrollLock: true
-              });
-            });
-        });
-        </script>
-    {% endblock %}
 </body>
 </html>

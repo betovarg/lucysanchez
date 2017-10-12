@@ -3,14 +3,6 @@ html {
     line-height: 1.4em;
 }
 
-
-header#header, section#body, footer#footer {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
 // z-index
 .header {
   z-index: 10;
@@ -32,6 +24,13 @@ html, body, button, input, select, textarea, .pure-g, .pure-g [class*="pure-u"] 
   font-family: "Work Sans", Helvetica, sans-serif;
 }
 
+
+header#header, section#body, footer#footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
 
 #body {
   font-size: 14px;
