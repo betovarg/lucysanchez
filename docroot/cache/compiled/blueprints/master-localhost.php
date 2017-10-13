@@ -1,8 +1,8 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledBlueprints',
-    'timestamp' => 1507911545,
-    'checksum' => '63e1203a64c9fd8ac8f21f7c47d2c8fe',
+    'timestamp' => 1507913824,
+    'checksum' => '518b2c82443c6ad78344c9500cf187e6',
     'files' => [
         'user/plugins/admin/blueprints/config' => [
             'media' => [
@@ -60,6 +60,10 @@ return [
             'plugins/problems' => [
                 'file' => 'user/plugins/problems/blueprints.yaml',
                 'modified' => 1507909594
+            ],
+            'plugins/tinymce-editor' => [
+                'file' => 'user/plugins/tinymce-editor/blueprints.yaml',
+                'modified' => 1507913812
             ]
         ]
     ],
@@ -3102,6 +3106,161 @@ return [
                 ],
                 'name' => 'plugins.problems.built_in_css',
                 'validation' => 'strict'
+            ],
+            'plugins.tinymce-editor' => [
+                'type' => '_root',
+                'form_field' => false,
+                'form' => [
+                    'validation' => 'strict'
+                ]
+            ],
+            'plugins.tinymce-editor.enabled' => [
+                'type' => 'toggle',
+                'label' => 'PLUGIN_ADMIN.PLUGIN_STATUS',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'PLUGIN_ADMIN.ENABLED',
+                    0 => 'PLUGIN_ADMIN.DISABLED'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.tinymce-editor.enabled',
+                'validation' => 'strict'
+            ],
+            'plugins.tinymce-editor.apikey' => [
+                'type' => 'text',
+                'label' => 'PLUGIN_TINYMCE_EDITOR.API_KEY',
+                'name' => 'plugins.tinymce-editor.apikey',
+                'validation' => 'strict'
+            ],
+            'plugins.tinymce-editor.plugins' => [
+                'type' => 'selectize',
+                'label' => 'PLUGIN_ADMIN.PLUGINS',
+                'classes' => 'fancy',
+                'validate' => [
+                    'type' => 'commalist'
+                ],
+                'name' => 'plugins.tinymce-editor.plugins',
+                'validation' => 'strict'
+            ],
+            'plugins.tinymce-editor.parameters' => [
+                'name' => 'plugins.tinymce-editor.parameters',
+                'type' => 'list',
+                'style' => 'vertical',
+                'collapsible' => 0,
+                'label' => 'PLUGIN_TINYMCE_EDITOR.PARAMETERS',
+                'validation' => 'strict',
+                'array' => true
+            ],
+            'plugins.tinymce-editor.parameters.*' => [
+                'type' => '_parent',
+                'name' => 'plugins.tinymce-editor.parameters.*',
+                'form_field' => false
+            ],
+            'plugins.tinymce-editor.parameters.*.name' => [
+                'type' => 'text',
+                'label' => 'PLUGIN_ADMIN.NAME',
+                'name' => 'plugins.tinymce-editor.parameters.*.name',
+                'validation' => 'strict'
+            ],
+            'plugins.tinymce-editor.parameters.*.value' => [
+                'type' => 'text',
+                'label' => 'PLUGIN_TINYMCE_EDITOR.VALUE',
+                'name' => 'plugins.tinymce-editor.parameters.*.value',
+                'validation' => 'strict'
+            ],
+            'plugins.tinymce-editor.menubar' => [
+                'type' => 'toggle',
+                'label' => 'PLUGIN_TINYMCE_EDITOR.MENU_BAR',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'PLUGIN_ADMIN.ENABLED',
+                    0 => 'PLUGIN_ADMIN.DISABLED'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.tinymce-editor.menubar',
+                'validation' => 'strict'
+            ],
+            'plugins.tinymce-editor.menu' => [
+                'name' => 'plugins.tinymce-editor.menu',
+                'type' => 'list',
+                'style' => 'vertical',
+                'collapsible' => 0,
+                'label' => 'PLUGIN_ADMIN.MENU',
+                'validation' => 'strict',
+                'array' => true
+            ],
+            'plugins.tinymce-editor.menu.*' => [
+                'type' => '_parent',
+                'name' => 'plugins.tinymce-editor.menu.*',
+                'form_field' => false
+            ],
+            'plugins.tinymce-editor.menu.*.title' => [
+                'type' => 'text',
+                'label' => 'PLUGIN_ADMIN.TITLE',
+                'name' => 'plugins.tinymce-editor.menu.*.title',
+                'validation' => 'strict'
+            ],
+            'plugins.tinymce-editor.menu.*.items' => [
+                'type' => 'text',
+                'label' => 'PLUGIN_ADMIN.ITEMS',
+                'name' => 'plugins.tinymce-editor.menu.*.items',
+                'validation' => 'strict'
+            ],
+            'plugins.tinymce-editor.toolbar' => [
+                'name' => 'plugins.tinymce-editor.toolbar',
+                'type' => 'list',
+                'style' => 'vertical',
+                'collapsible' => 0,
+                'label' => 'PLUGIN_TINYMCE_EDITOR.TOOLBAR',
+                'validation' => 'strict',
+                'array' => true
+            ],
+            'plugins.tinymce-editor.toolbar.*' => [
+                'type' => '_parent',
+                'name' => 'plugins.tinymce-editor.toolbar.*',
+                'form_field' => false
+            ],
+            'plugins.tinymce-editor.toolbar.*.row' => [
+                'type' => 'text',
+                'label' => 'PLUGIN_TINYMCE_EDITOR.ROW',
+                'name' => 'plugins.tinymce-editor.toolbar.*.row',
+                'validation' => 'strict'
+            ],
+            'plugins.tinymce-editor.branding' => [
+                'type' => 'toggle',
+                'label' => 'PLUGIN_TINYMCE_EDITOR.BRANDING',
+                'highlight' => 0,
+                'default' => 0,
+                'options' => [
+                    1 => 'PLUGIN_ADMIN.ENABLED',
+                    0 => 'PLUGIN_ADMIN.DISABLED'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.tinymce-editor.branding',
+                'validation' => 'strict'
+            ],
+            'plugins.tinymce-editor.statusbar' => [
+                'type' => 'toggle',
+                'label' => 'PLUGIN_TINYMCE_EDITOR.STATUS_BAR',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'PLUGIN_ADMIN.ENABLED',
+                    0 => 'PLUGIN_ADMIN.DISABLED'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.tinymce-editor.statusbar',
+                'validation' => 'strict'
             ]
         ],
         'rules' => [
@@ -3456,6 +3615,31 @@ return [
                 'problems' => [
                     'enabled' => 'plugins.problems.enabled',
                     'built_in_css' => 'plugins.problems.built_in_css'
+                ],
+                'tinymce-editor' => [
+                    'enabled' => 'plugins.tinymce-editor.enabled',
+                    'apikey' => 'plugins.tinymce-editor.apikey',
+                    'plugins' => 'plugins.tinymce-editor.plugins',
+                    'parameters' => [
+                        '*' => [
+                            'name' => 'plugins.tinymce-editor.parameters.*.name',
+                            'value' => 'plugins.tinymce-editor.parameters.*.value'
+                        ]
+                    ],
+                    'menubar' => 'plugins.tinymce-editor.menubar',
+                    'menu' => [
+                        '*' => [
+                            'title' => 'plugins.tinymce-editor.menu.*.title',
+                            'items' => 'plugins.tinymce-editor.menu.*.items'
+                        ]
+                    ],
+                    'toolbar' => [
+                        '*' => [
+                            'row' => 'plugins.tinymce-editor.toolbar.*.row'
+                        ]
+                    ],
+                    'branding' => 'plugins.tinymce-editor.branding',
+                    'statusbar' => 'plugins.tinymce-editor.statusbar'
                 ]
             ]
         ],
