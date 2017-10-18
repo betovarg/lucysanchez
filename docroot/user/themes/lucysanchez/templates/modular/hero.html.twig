@@ -1,0 +1,18 @@
+<section class="hero-intro">
+  <div class="hero-intro-section hero-intro-left">
+    <h3 class="pretitle">{{ header.subtitle}}</h3>
+    <h1 class="main-heading">{{header.main_heading}}</h1>
+    <div class="hero-intro-summary">
+      {{ content }}
+    </div>
+    <div class="hero-intro-actions">
+      <a href="{{header.btn_url_1}}" class="button button-inline">{{header.btn_txt_1}}</a>
+      <a href="{{header.btn_url_2}}" class="button-filled button-inline">{{header.btn_txt_2}}</a>
+    </div>
+  </div>
+  <div class="hero-intro-section hero-intro-right">
+    {% if header.image %}
+      <img src="{{ media[header.image].url }}" alt="Ilustración de Epitafio de una cazadora">
+    {% endif %}
+  </div>
+</section>

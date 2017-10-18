@@ -1,0 +1,14 @@
+title: hero
+'@extends': default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+              uploads:
+                label: Page Media (first one will be displayed next to your content)
+              header.image:
+                label: Choose media
+                type: pagemediaselect
