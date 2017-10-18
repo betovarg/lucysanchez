@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/var/www/html/user/config/system.yaml',
-    'modified' => 1508344979,
+    'modified' => 1508348603,
     'data' => [
         'absolute_urls' => false,
         'timezone' => '',
@@ -26,7 +26,7 @@ return [
             'override_locale' => false
         ],
         'home' => [
-            'alias' => '/home',
+            'alias' => '/lucysanchez',
             'hide_in_urls' => false
         ],
         'pages' => [
