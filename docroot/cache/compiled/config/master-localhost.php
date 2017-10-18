@@ -1,93 +1,93 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledConfig',
-    'timestamp' => 1507913853,
-    'checksum' => '5c53bdb86397f5713c74d558d7bc7af7',
+    'timestamp' => 1508342802,
+    'checksum' => '4f7a3b301266a62084a8b665aa509ea5',
     'files' => [
         'user/config' => [
             'media' => [
                 'file' => 'user/config/media.yaml',
-                'modified' => 1507909594
+                'modified' => 1508280463
             ],
             'plugins/tinymce-editor' => [
                 'file' => 'user/config/plugins/tinymce-editor.yaml',
-                'modified' => 1507913852
+                'modified' => 1508280463
             ],
             'security' => [
                 'file' => 'user/config/security.yaml',
-                'modified' => 1507909594
+                'modified' => 1508280463
             ],
             'site' => [
                 'file' => 'user/config/site.yaml',
-                'modified' => 1507909594
+                'modified' => 1508280463
             ],
             'streams' => [
                 'file' => 'user/config/streams.yaml',
-                'modified' => 1507909594
+                'modified' => 1508280463
             ],
             'system' => [
                 'file' => 'user/config/system.yaml',
-                'modified' => 1507909594
+                'modified' => 1508342801
             ],
             'themes/lucysanchez' => [
                 'file' => 'user/config/themes/lucysanchez.yaml',
-                'modified' => 1507909594
+                'modified' => 1508280463
             ]
         ],
         'system/config' => [
             'media' => [
                 'file' => 'system/config/media.yaml',
-                'modified' => 1507911412
+                'modified' => 1508280463
             ],
             'site' => [
                 'file' => 'system/config/site.yaml',
-                'modified' => 1507911412
+                'modified' => 1508280463
             ],
             'streams' => [
                 'file' => 'system/config/streams.yaml',
-                'modified' => 1507911412
+                'modified' => 1508280463
             ],
             'system' => [
                 'file' => 'system/config/system.yaml',
-                'modified' => 1507911412
+                'modified' => 1508280463
             ]
         ],
         'user/plugins' => [
             'plugins/admin' => [
                 'file' => 'user/plugins/admin/admin.yaml',
-                'modified' => 1507911486
+                'modified' => 1508280463
             ],
             'plugins/devtools' => [
                 'file' => 'user/plugins/devtools/devtools.yaml',
-                'modified' => 1507909594
+                'modified' => 1508280464
             ],
             'plugins/email' => [
                 'file' => 'user/plugins/email/email.yaml',
-                'modified' => 1507909594
+                'modified' => 1508280464
             ],
             'plugins/error' => [
                 'file' => 'user/plugins/error/error.yaml',
-                'modified' => 1507909594
+                'modified' => 1508280464
             ],
             'plugins/form' => [
                 'file' => 'user/plugins/form/form.yaml',
-                'modified' => 1507911518
+                'modified' => 1508280464
             ],
             'plugins/login' => [
                 'file' => 'user/plugins/login/login.yaml',
-                'modified' => 1507911529
+                'modified' => 1508280464
             ],
             'plugins/markdown-notices' => [
                 'file' => 'user/plugins/markdown-notices/markdown-notices.yaml',
-                'modified' => 1507909594
+                'modified' => 1508280464
             ],
             'plugins/problems' => [
                 'file' => 'user/plugins/problems/problems.yaml',
-                'modified' => 1507909594
+                'modified' => 1508280464
             ],
             'plugins/tinymce-editor' => [
                 'file' => 'user/plugins/tinymce-editor/tinymce-editor.yaml',
-                'modified' => 1507913814
+                'modified' => 1508280464
             ]
         ]
     ],
