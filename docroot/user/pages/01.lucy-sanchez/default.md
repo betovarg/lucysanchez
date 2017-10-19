@@ -1,4 +1,0 @@
----
-title: 'Lucy Sánchez'
----
-
