@@ -1,17 +1,29 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledConfig',
-    'timestamp' => 1508342802,
-    'checksum' => '4f7a3b301266a62084a8b665aa509ea5',
+    'timestamp' => 1508445001,
+    'checksum' => 'dc6cc2464bc834014989dc456ef6d2b3',
     'files' => [
         'user/config' => [
             'media' => [
                 'file' => 'user/config/media.yaml',
                 'modified' => 1508280463
             ],
+            'plugins/featherlight' => [
+                'file' => 'user/config/plugins/featherlight.yaml',
+                'modified' => 1508443914
+            ],
+            'plugins/lightslider' => [
+                'file' => 'user/config/plugins/lightslider.yaml',
+                'modified' => 1508444948
+            ],
             'plugins/tinymce-editor' => [
                 'file' => 'user/config/plugins/tinymce-editor.yaml',
                 'modified' => 1508280463
+            ],
+            'plugins/unitegallery' => [
+                'file' => 'user/config/plugins/unitegallery.yaml',
+                'modified' => 1508364377
             ],
             'security' => [
                 'file' => 'user/config/security.yaml',
@@ -27,7 +39,7 @@ return [
             ],
             'system' => [
                 'file' => 'user/config/system.yaml',
-                'modified' => 1508342801
+                'modified' => 1508441808
             ],
             'themes/lucysanchez' => [
                 'file' => 'user/config/themes/lucysanchez.yaml',
@@ -68,6 +80,10 @@ return [
             'plugins/error' => [
                 'file' => 'user/plugins/error/error.yaml',
                 'modified' => 1508280464
+            ],
+            'plugins/featherlight' => [
+                'file' => 'user/plugins/featherlight/featherlight.yaml',
+                'modified' => 1508441808
             ],
             'plugins/form' => [
                 'file' => 'user/plugins/form/form.yaml',
@@ -181,6 +197,18 @@ return [
                 'routes' => [
                     404 => '/error'
                 ]
+            ],
+            'featherlight' => [
+                'enabled' => true,
+                'active' => true,
+                'gallery' => true,
+                'requirejs' => false,
+                'openSpeed' => '250',
+                'closeSpeed' => '250',
+                'closeOnClick' => 'background',
+                'closeOnEsc' => true,
+                'root' => 'body',
+                'initTemplate' => 'plugin://featherlight/js/featherlight.init.js'
             ],
             'form' => [
                 'enabled' => true,
@@ -337,6 +365,42 @@ return [
                 ],
                 'branding' => false,
                 'statusbar' => true
+            ],
+            'lightslider' => [
+                'enabled' => true,
+                'built_in_css' => true,
+                'slider_type' => 'text',
+                'type_text_height' => 'auto',
+                'type_text_vertical_padding' => '80px',
+                'type_text_horizontal_padding' => '50px',
+                'type_text_brightness' => '0',
+                'item' => '1',
+                'slideMove' => '1',
+                'slideMargin' => '0',
+                'loop' => 'false',
+                'mode' => 'fade',
+                'controls' => 'true',
+                'keyPress' => 'true',
+                'auto' => 'true',
+                'pause' => '2000',
+                'speed' => '1000',
+                'pager' => 'true',
+                'gallery' => 'true',
+                'gallery_thumb_width' => '100',
+                'gallery_thumb_height' => '100',
+                'gallery_margin' => '15',
+                'gallery_thumb_margin' => '5',
+                'enableTouch' => 'true',
+                'enableDrag' => 'true',
+                'pauseOnHover' => 'false'
+            ],
+            'unitegallery' => [
+                'enabled' => true,
+                'assets_in_meta' => true,
+                'gallery_theme' => 'tilesgrid',
+                'gallery_div_id' => 'unite-gallery',
+                'thumb_width' => 600,
+                'thumb_height' => 600
             ]
         ],
         'media' => [
@@ -712,7 +776,7 @@ return [
                     'twig' => true
                 ],
                 'markdown' => [
-                    'extra' => false,
+                    'extra' => true,
                     'auto_line_breaks' => false,
                     'auto_url_links' => false,
                     'escape_markup' => false,
@@ -802,7 +866,7 @@ return [
                 'log' => true
             ],
             'debugger' => [
-                'enabled' => false,
+                'enabled' => true,
                 'shutdown' => [
                     'close_connection' => true
                 ],
