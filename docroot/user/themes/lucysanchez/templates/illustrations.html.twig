@@ -8,11 +8,11 @@
       <div class="gallery-section-aligner section-aligner">
         <ul>
           {% for image in page.media.images %}
-            <li>
-              <a rel="lightbox" data-width="600" data-height="400" data-featherlight="/user/pages/illustrations/{{image.meta.img}}" href="/user/pages/illustrations/{{image.meta.img}}">
-                <img title="{{image.meta.title}}" src="/user/pages/illustrations/{{image.meta.thumbnail}}" />
-              </a>
-            </li>
+          <li>
+            <a class="gallery" href="/user/pages/illustrations/{{image.meta.img}}">
+              <img src="/user/pages/illustrations/{{image.meta.thumbnail}}">
+            </a>
+          </li>
           {% endfor %}
         </ul>
       </div>
