@@ -1,8 +1,13 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledConfig',
+<<<<<<< HEAD
     'timestamp' => 1508445001,
     'checksum' => 'dc6cc2464bc834014989dc456ef6d2b3',
+=======
+    'timestamp' => 1508348614,
+    'checksum' => '64bc4993dd63dcc3b7981decf0df8f69',
+>>>>>>> f3b7d202749c5cd5d7ed344c5f02afcccc9906f7
     'files' => [
         'user/config' => [
             'media' => [
@@ -39,7 +44,11 @@ return [
             ],
             'system' => [
                 'file' => 'user/config/system.yaml',
+<<<<<<< HEAD
                 'modified' => 1508441808
+=======
+                'modified' => 1508348603
+>>>>>>> f3b7d202749c5cd5d7ed344c5f02afcccc9906f7
             ],
             'themes/lucysanchez' => [
                 'file' => 'user/config/themes/lucysanchez.yaml',
@@ -747,7 +756,7 @@ return [
                 'override_locale' => false
             ],
             'home' => [
-                'alias' => '/home',
+                'alias' => '/lucysanchez',
                 'hide_in_urls' => false
             ],
             'pages' => [
