@@ -213,6 +213,7 @@ header#header #logo h3 a {
 .ml, .ml:hover {
   color: #4f4f4f !important; }
 
+
 /*------------------------------------*    $VARIABLES
 \*------------------------------------*/
 .button {
@@ -324,3 +325,14 @@ header#header #logo h3 a {
   @media (min-width: 769px) {
     .hero-intro-section {
       width: 50%; } }
+
+.bio {
+  overflow: hidden; }
+  .bio h2 {
+    font-weight: bold; }
+  .bio img {
+    float: left;
+    max-width: 140px;
+    margin: 0 20px 20px 0; }
+  .bio p {
+    font-weight: bold; }
