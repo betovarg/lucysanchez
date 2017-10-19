@@ -1,0 +1,30 @@
+title: hero
+'@extends': default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+              header.image:
+                label: Choose media
+                type: pagemediaselect
+              header.subtitle:
+                label: Hero Subtitle
+                type: text
+              header.main_heading:
+                label: Hero Main title
+                type: text
+              header.btn_txt_1:
+                label: Left button text
+                type: text
+              header.btn_url_1:
+                label: Left button URL
+                type: text
+              header.btn_txt_2:
+                label: Right button text
+                type: text
+              header.btn_url_2:
+                label: Right button URL
+                type: text
