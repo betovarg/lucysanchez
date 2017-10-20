@@ -1,0 +1,20 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+{{ dump(page.media.images) }}
+
+    <h2 class="sub-heading">{{header.title}}</h2>
+    <section class="gallery">
+      <div class="gallery-section-aligner section-aligner">
+        <ul>
+          {% for image in page.media.images %}
+          <li>
+            <a class="gallery" href="/user/pages/illustrations/{{image.meta.img}}">
+              <img src="/user/pages/illustrations/{{image.meta.thumbnail}}">
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </section>
+{% endblock %}

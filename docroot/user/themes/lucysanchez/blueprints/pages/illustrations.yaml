@@ -1,0 +1,21 @@
+title: Gallery
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        gallery:
+          type: tab
+          title: Gallery
+
+          fields:
+            header.img:
+              type: image
+              label: Add an image
+              default: 5

@@ -2,6 +2,9 @@ html {
   font-size: 62.5%;
   line-height: 1.4em; }
 
+body {
+  height: inherit !important; }
+
 .header {
   z-index: 10; }
 
@@ -213,6 +216,61 @@ header#header #logo h3 a {
 .ml, .ml:hover {
   color: #4f4f4f !important; }
 
+.gallery {
+  height: auto;
+  position: relative; }
+
+.gallery ul {
+  overflow: hidden;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  margin: 32px 0; }
+
+.gallery li {
+  margin: 0 10px 20px 10px;
+  flex-basis: calc(24% - 20px);
+  display: flex;
+  max-height: 265px; }
+
+.gallery li a {
+  display: flex; }
+
+.gallery li img {
+  width: 100%;
+  height: auto; }
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .gallery li {
+    width: 48.5714285714%;
+    clear: right;
+    float: left;
+    margin-left: 0;
+    margin-right: 2.8571428571%;
+    margin-bottom: 10px; }
+  .gallery li:nth-child(2n+0) {
+    margin-right: 0; } }
+
+@media (min-width: 768px) and (max-width: 959px) {
+  .gallery li {
+    width: 31.4285714286%;
+    clear: right;
+    float: left;
+    margin-left: 0;
+    margin-right: 2.8571428571%; }
+  .gallery li:nth-child(3n+0) {
+    margin-right: 0; } }
+
+@media (min-width: 960px) {
+  .gallery li {
+    width: 22.8571428571%;
+    clear: right;
+    float: left;
+    margin-left: 0;
+    margin-right: 2.8571428571%; }
+  .gallery li:nth-child(4n+0) {
+    margin-right: 0; } }
 
 /*------------------------------------*    $VARIABLES
 \*------------------------------------*/
