@@ -3,7 +3,7 @@ html {
   line-height: 1.4em; }
 
 body {
-  height: inherit; }
+  height: inherit !important; }
 
 .header {
   z-index: 10; }
