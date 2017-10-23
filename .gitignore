@@ -34,8 +34,13 @@ npm-debug.log
 # Grav Specific
 .sass-cache
 composer.lock
+cache/*
 docroot/cache/*
+assets/*
 docroot/assets/*
+logs/*
 docroot/logs/*
+images/*
 docroot/images/*
+user/data/*
 docroot/user/data/*
