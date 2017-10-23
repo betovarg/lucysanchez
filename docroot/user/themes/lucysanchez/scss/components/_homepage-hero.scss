@@ -1,0 +1,90 @@
+.hero-intro {
+  background: red;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  @media (min-width: 769px) {
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+.pretitle {
+    font-size: 13px;
+    font-size: 1.3rem;
+    color: #EB5757;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+
+.main-heading {
+    font-size: 24px;
+    font-size: 2.4rem;
+    color: #000;
+    text-transform: none;
+    margin-bottom: 20px;
+    text-align: left;
+    font-weight: bold;
+    @media (min-width: 400px){
+      font-size: 34px;
+      font-size: 3.4rem;
+    }
+}
+
+.hero-intro .button , .hero-intro .button-filled, .hero-intro .button-filled-highlighted {
+  font-size: 14px;
+  font-size: 1.4rem;
+  border: solid 3px #000;
+  border-radius: 0;
+  background-color: #fff;
+  cursor: pointer;
+  line-height: 1.5;
+  display: inline-block;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  color: #000;
+  font-weight: bold;
+  text-transform: uppercase;
+  outline: 0;
+  @media (min-width: 680px) {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+}
+
+.hero-intro .button-filled {
+  background: #EDCECE;
+  color: #4f4f4f;
+  border-color: #EE9191;
+}
+
+@media (min-width: 769px){
+  .hero-intro-right {
+    -ms-flex-order: 2;
+    order: 2;
+  }
+}
+
+.hero-intro-left {
+  padding: 20px;
+  @media (min-width: 769px){
+    padding: 40px;
+    -ms-flex-order: 1;
+    order: 1;
+  }
+}
+.hero-intro-section {
+    background-color: #F4F4F4;
+
+    @media (min-width: 769px) {
+        width: 50%;
+    }
+}

@@ -1,0 +1,111 @@
+footer {
+  background: transparent;
+  color: red;
+}
+.bio {
+  margin-bottom: 35px; }
+  .bio .content-limiter {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+        align-items: flex-start;
+    -ms-flex-direction: column;
+        flex-direction: column; }
+    @media (min-width: 680px) {
+      .bio .content-limiter {
+        -ms-flex-direction: row;
+            flex-direction: row;
+        -ms-flex-pack: start;
+            justify-content: flex-start; } }
+  @media (min-width: 800px) {
+    .bio .content-limiter {
+      width: 70%;
+      padding: 0; } }
+
+.bio-image {
+  max-width: 140px;
+  margin-bottom: 20px; }
+  @media (min-width: 680px) {
+    .bio-image {
+      margin-right: 40px; } }
+
+.contact {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  border-top: solid 1px #BDBDBD;
+  padding: 35px 20px; }
+  @media (min-width: 680px) {
+    .contact {
+      -ms-flex-direction: row;
+          flex-direction: row; } }
+
+.contact-left {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-direction: column;
+      flex-direction: column; }
+  @media (min-width: 680px) {
+    .contact-left {
+      -ms-flex-direction: row;
+          flex-direction: row;
+      padding-right: 40px; } }
+  .contact-left strong {
+    color: #000; }
+
+.contact-right {
+  font-size: 14px;
+  font-size: 1.4rem; }
+  @media (min-width: 680px) {
+    .contact-right {
+      border-left: solid 1px #bdbdbd;
+      padding-left: 40px; } }
+  .contact-right a {
+    color: #000;
+    font-weight: bold; }
+
+.contact-intro {
+  text-align: center; }
+  @media (min-width: 680px) {
+    .contact-intro {
+      text-align: left;
+      margin-right: 20px; } }
+
+.social-menu-container {
+  display: inline-block;
+  margin: 0 0 10px;
+  padding: 0; }
+  @media (min-width: 680px) {
+    .social-menu-container {
+      margin: 0; } }
+
+.social-menu-item {
+  display: inline-block;
+  padding: 0 5px; }
+
+.social-item {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  text-indent: 100%;
+  overflow: hidden;
+  background-image: url(../img/sprite.png);
+  background-repeat: no-repeat;
+  background-color: #2B333F;
+  border-radius: 100%; }
+  .svg .social-item {
+    background-image: url(../img/sprite.svg); }
+
+.insta {
+  background-position: center -242px; }
+
+.tw {
+  background-position: center -302px; }
+
+.ml {
+  color: #4f4f4f; }

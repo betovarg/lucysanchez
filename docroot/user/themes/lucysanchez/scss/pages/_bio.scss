@@ -1,0 +1,14 @@
+.bio {
+  overflow: hidden;
+  h2 {
+    font-weight: bold;
+  }
+  img {
+    float: left;
+    max-width: 140px;
+    margin: 0 20px 20px 0;
+  }
+  p {
+    font-weight: bold;
+  }
+}

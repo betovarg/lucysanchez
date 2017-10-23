@@ -2,6 +2,10 @@
 .DS_Store
 .AppleDouble
 .LSOverride
+ehthumbs.db
+Icon?
+Thumbs.db
+*.swp
 
 # Icon must end with two \r
 Icon
@@ -26,3 +30,17 @@ Temporary Items
 
 #npm debug
 npm-debug.log
+
+# Grav Specific
+.sass-cache
+composer.lock
+cache/*
+docroot/cache/*
+assets/*
+docroot/assets/*
+logs/*
+docroot/logs/*
+images/*
+docroot/images/*
+user/data/*
+docroot/user/data/*
