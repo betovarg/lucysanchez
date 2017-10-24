@@ -5,5 +5,9 @@ author:
 metadata:
     description: 'Grav is an easy to use, yet powerful, open source flat-file CMS'
 menu:
+    - text: Bio
+      url: /bio
+    - text: Illustrations
+      url: /illustrations
     - text: Contact
       url: /#footer
