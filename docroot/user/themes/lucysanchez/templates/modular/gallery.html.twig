@@ -1,0 +1,12 @@
+<section class="gallery-home">
+  <ul class="gallery-home__list">
+    {% for image in page.header.gallery %}
+    <li>
+      <a href="{{page.route}}/{{image.image}}" class="gallery-home__list-link">
+        <img src="{{page.route}}/{{image.image}}" alt="{{image.text}}" class="gallery-home__image">
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+  <a href="{{header.url}}" class="button show-button show-gal">Ver todas las ilustraciones</a>
+</section>

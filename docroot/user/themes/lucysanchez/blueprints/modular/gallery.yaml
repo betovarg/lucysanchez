@@ -1,0 +1,25 @@
+title: gallery
+'@extends': default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+              header.url:
+                type: text
+                label: Gallery URL
+                default: /illustrations
+              header.gallery:
+                type: list
+                label: Gallery Images
+                fields:
+                  .text:
+                    type: text
+                    label: Text
+                    placeholder: Alt text
+                  .image:
+                    type: pagemediaselect
+                    label: Gallery Image
+                    placeholder: Select image from media
